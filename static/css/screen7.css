@@ -1,0 +1,310 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	
+}
+.main {
+	content: '';
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	
+}
+
+.container-right {
+	width: 100%;
+	height: 100%;
+	float: right;
+	background-color:#F5FCFB;
+}
+
+
+.sub-top {
+	width: 100%;
+	height: 10%;
+	background-color: white;
+	position: relative;
+	
+}
+.sub-bottom {
+	width: 100%;
+	height: 90%;
+	position: relative;
+	overflow: hidden;
+	font-family: 'Nunito';
+	
+}
+.sub-bottom p {
+	font-size: 200%;
+	margin-top: 2%;
+	text-align: center;
+	align-items: center;
+}
+.content {
+	height: 50%;
+	width: 90%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.left-bar {
+	height: 60%;
+	width: 40%;
+	background-color: #DBF6F4;
+	float: left;
+	margin: 0;
+	margin-top: 0.75%;
+	border-radius: 20px;
+	position: relative;
+	
+}
+.left-bar:before {
+	content: ' ';
+	width: 100%;
+	height: 100%;
+	background-color: #3AAFA9;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 20px;
+}
+.right-button {
+	float: right;
+	height: 100%;
+	width: 10%;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 3px;
+	position: relative;
+	cursor: pointer;
+	font-family: 'Nunito';
+}
+.right-button p {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.right-button:hover {
+	background-color: #3AAFA9;
+	border: 1px solid #3AAFA9;
+	color: white;
+}
+
+
+.frame-top {
+	margin: 0;
+	width: 100%;
+	height: 45%;
+	margin-left: 0%;
+	margin-right: 0.5%;
+	margin-top: 5%;
+	position: relative;
+}
+.bottom-text {
+	display: inline-block;
+	height: 70%;
+	width: 17%;
+	margin-top: 0%;
+	margin-left: 8%;
+	margin-right: 8%;
+	margin-bottom: 5%;
+	align-items: center;
+	position: relative;
+	text-align: center;
+	font-size: 150%;
+}
+.exit_button_popup{
+  border: 1px solid #fff;
+  width: 33%;
+  display: none;
+  border-radius: 14px;
+  text-align: center;
+  /* padding: 20px; */
+  padding-bottom: 3%;
+  padding-left: 2%;
+  padding-right: 3%;
+  position: absolute;
+  background-color: #fff;
+  top: 35%;
+  left: 34%;
+  z-index: 1;
+  font-family: 'Nunito';
+  box-shadow: -1px 1px 18px #3aafa9;
+
+}
+.exit_confirmation_buttons
+{
+  float: left; 
+}
+.yes_exit_confirmation_button
+{
+    margin: auto;
+    display: flex;
+    float: left;
+    align-items: center;
+    height: 38px;
+    border: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-left: 22%;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: 0.5s ease all;
+    font-family: 'Nunito';
+    font-size: 20px;
+    border: 2.5px solid #3AAFA9; 
+
+}
+
+.yes_exit_confirmation_button:hover
+{   
+    color: #fff;
+    background-color: #3AAFA9;
+    border: none;
+}
+
+.no_exit_confirmation_button
+{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    border: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 6px; 
+    background-color: #fff;
+    font-family: 'Nunito';
+    font-size: 20px;
+    border: 2.5px solid #3AAFA9;
+    transition: 0.5s ease all    
+}
+
+.no_exit_confirmation_button:hover
+{   
+    color: #fff;
+    background-color: #3AAFA9;
+    border: none;
+}
+
+.box-first {
+	background-color: white;
+	display: inline-block;
+	height: 90%;
+	width: 17%;
+	margin-top: 0%;
+	margin-left: 8%;
+	margin-right: 8%;
+	margin-bottom: 5%;
+	align-items: center;
+	position: relative;
+}
+.box-first p {
+	font-size: 200%;
+	text-align: center;
+	word-wrap: break-word;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	
+}
+.box-first:hover {
+	border: 2px solid #3AAFA9;
+	color: white;
+	cursor: pointer;
+}
+
+.box-second {
+	background-color: white;
+	display: inline-block;
+	height: 90%;
+	width: 17%;
+	margin-top: 0%;
+	margin-left: 8%;
+	margin-right: 8%;
+	margin-bottom: 5%;
+	align-items: center;
+	position: relative;
+}
+.box-second p {
+	font-size: 200%;
+	text-align: center;
+	word-wrap: break-word;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	
+}
+.box-second:hover {
+	border: 2px solid #3AAFA9;
+	color: white;
+	cursor: pointer;
+}
+.box-third {
+	background-color: white;
+	display: inline-block;
+	height: 90%;
+	width: 17%;
+	margin-top: 0%;
+	margin-left: 8%;
+	margin-right: 8%;
+	margin-bottom: 5%;
+	align-items: center;
+	position: relative;
+}
+.box-third p {
+	font-size: 200%;
+	text-align: center;
+	word-wrap: break-word;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	
+}
+.box-third:hover {
+	border: 2px solid #3AAFA9;
+	color: white;
+	cursor: pointer;
+}
+.button-start {
+	margin-left: auto;
+	margin-right: auto;
+}
+.centered-button {
+	widows: 100%;
+	height: 10%;
+	text-align: center;
+	position: relative;
+	font-family: 'Nunito';
+}
+.centered-button button {
+	background-color: #3AAFA9;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	padding: 1% 2%;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+.centered-button button:hover {
+	padding: 1.25% 2.25%;
+	cursor: pointer;
+}
