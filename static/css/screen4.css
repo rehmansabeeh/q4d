@@ -10,6 +10,13 @@ body {
   height: 100vh;
   position: relative;
 }
+.question {
+  font-size: 150%;
+  margin-left: 5%
+}
+.question1 {
+  font-size: 150%;
+}
 
 .container-left {
   width: 12%;
@@ -33,7 +40,7 @@ body {
 }
 .sub-bottom {
   width: 100%;
-  height: 65%;
+  height: 70%;
   position: relative;
   overflow: hidden;
   background-image: url("../images/background_image.png");
@@ -43,15 +50,19 @@ body {
 
 .sub-bottom1 {
   width: 100%;
-  height: 90%;
+  height: 100%;
   position: relative;
   overflow: hidden;
   background-image: url("../images/background_image.png");
   background-position: center; /* Center the image */
   background-size: cover;
-  text-align: center;
 }
-.sub-bottom1 button {
+.last {
+  text-align: center;
+  height: 20%;
+  width: 100%;
+}
+.last button {
   background-color: #3aafa9;
   border: none;
   border-radius: 5px;
@@ -59,8 +70,8 @@ body {
   padding: 1.5% 3%;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
-  margin-top: 3%;
+  font-size: 22px;
+  margin-top: 1%;
   margin-left: auto;
   margin-right: auto;
   font-family: "Nunito";
@@ -147,9 +158,9 @@ body {
 .frame1 {
   margin: 0;
   width: 90%;
-  height: 50%;
+  height: 47%;
   margin-left: 6.5%;
-  margin-top: 10%;
+  margin-top: 7%;
   position: relative;
 }
 .exit_button_popup{
