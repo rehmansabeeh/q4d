@@ -58,18 +58,18 @@ body {
 	
 }
 .sub-bottom1 button {
-	background-color: #3AAFA9;
+	background-color: #3aafa9;
 	border: none;
 	border-radius: 5px;
 	color: white;
 	padding: 1.5% 3%;
 	text-align: center;
 	text-decoration: none;
-	font-size: 16px;
+	font-size: 22px;
 	margin-top: 3%;
 	margin-left: auto;
 	margin-right: auto;
-	font-family: 'Nunito';
+	font-family: "Nunito";
 }
 .content {
 	height: 50%;
@@ -149,17 +149,32 @@ body {
 	width: 90%;
 	height: 70%;
 	margin-left: 8%;
-	margin-top: 10%;
+	margin-top: 7%;
 	position: relative;
 }
 .frame1 {
 	margin: 0;
 	width: 90%;
-	height: 50%;
+	height: 60%;
 	margin-left: 8%;
-	margin-top: 10%;
+	margin-top: 7%;
 	position: relative;
 }
+
+.question {
+	font-size: 170%;
+	border-radius: 5px;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 1.5%;
+	padding-bottom: 1.5%;
+	margin-right: 13%;
+	border: solid #3AAFA9;
+	border-width: 2px;
+	margin-bottom: 5%;
+	background-color:#3AAFA9 ;
+	color: white;
+  }
 .icon-gallery {
   position: absolute;
   top: 50%;

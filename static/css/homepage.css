@@ -1,7 +1,7 @@
 body {
     background: #F5FCFB;
     color: #444;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Nunito';
     width: 100%;
 	height: 100vh;
 }
@@ -64,17 +64,17 @@ body {
     margin-top: 3%;
 }
 .heading {
-    font-size: 200%;
-	word-wrap: break-word;
+    font-size: 250%;
+    word-wrap: break-word;
     position: relative;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 5%;
     font-family: 'Nunito';
 
 }
 
 .text {
-    font-size: 100%;
+    font-size: 150%;
 	word-wrap: break-word;
     position: relative;
     margin-top: 2%;
@@ -206,7 +206,6 @@ body {
     line-height: 1;
     font-weight: 400;
     letter-spacing: 3px;
-    text-transform: uppercase;
   }
   
   #header .logo h1 a,
@@ -246,8 +245,8 @@ body {
   color: #B4ADB0;
   padding: 10px 20px;
   transition: 0.3s;
-  font-size: 14px;
-  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+  font-family: 'Nunito';
   font-weight: 500;
 }
 
@@ -565,7 +564,7 @@ body {
       padding: 10px 10px;
       transition: 0.3s;
       font-size: 14px;
-      font-family: "Montserrat", sans-serif;
+      font-family: 'Nunito';
       font-weight: 500;
     }
     
@@ -578,7 +577,7 @@ body {
       padding: 10px 10px;
       transition: 0.3s;
       font-size: 14px;
-      font-family: "Montserrat", sans-serif;
+      font-family: 'Nunito';
       font-weight: 500;
     }
     .button_element{

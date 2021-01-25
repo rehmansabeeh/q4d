@@ -1,7 +1,7 @@
 body {
   background: #dbf6f4;
   color: #444;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Nunito';
 }
 
 p {
@@ -15,7 +15,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Nunito';
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
@@ -44,7 +44,6 @@ h6 {
   line-height: 1;
   font-weight: 400;
   letter-spacing: 3px;
-  text-transform: uppercase;
 }
 
 #header .logo h1 a,
@@ -84,8 +83,8 @@ h6 {
   color: #b4adb0;
   padding: 10px 20px;
   transition: 0.3s;
-  font-size: 14px;
-  font-family: "Montserrat", sans-serif;
+  font-size: 19px;
+  font-family: 'Nunito';
   font-weight: 500;
 }
 
@@ -490,14 +489,15 @@ span{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 38px;
-  margin-left: 46%;
+  height: 50px;
+  font-family: 'Nunito';
+  font-size: 22px;
   color: #fff;
   border: none;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   border-radius: 6px;
 }
 .clearfix {
@@ -523,7 +523,7 @@ span{
     padding: 10px 10px;
     transition: 0.3s;
     font-size: 14px;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Nunito';
     font-weight: 500;
   }
 }
@@ -535,7 +535,7 @@ span{
     padding: 10px 10px;
     transition: 0.3s;
     font-size: 14px;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Nunito';
     font-weight: 500;
   }
   .button_element {

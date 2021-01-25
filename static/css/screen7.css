@@ -294,17 +294,20 @@ body {
 	font-family: 'Nunito';
 }
 .centered-button button {
-	background-color: #3AAFA9;
+	background-color: #3aafa9;
 	border: none;
 	border-radius: 5px;
 	color: white;
-	padding: 1% 2%;
+	padding: 1.2% 3%;
 	text-align: center;
 	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
+	font-size: 22px;
+	margin-top: 0%;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: "Nunito";
 }
 .centered-button button:hover {
-	padding: 1.25% 2.25%;
+	padding: 1.5% 3.2%;
 	cursor: pointer;
 }

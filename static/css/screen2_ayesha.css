@@ -35,6 +35,22 @@ body {
   background-color: white;
   position: relative;
 }
+.frame {
+  margin: 0;
+  width: 90%;
+  height: 65%;
+  margin-left: 8%;
+  margin-top: 7%;
+  position: relative;
+}
+.frame1 {
+  margin: 0;
+  width: 90%;
+  height: 52%;
+  margin-left: 8%;
+  margin-top: 7%;
+  position: relative;
+}
 .sub-bottom {
   width: 100%;
   height: 65%;
@@ -238,22 +254,7 @@ body {
   display: none;
 }
 
-.frame {
-  margin: 0;
-  width: 90%;
-  height: 65%;
-  margin-left: 8%;
-  margin-top: 7%;
-  position: relative;
-}
-.frame1 {
-  margin: 0;
-  width: 90%;
-  height: 52%;
-  margin-left: 8%;
-  margin-top: 10%;
-  position: relative;
-}
+
 .sub-left {
   background-color: white;
   float: left;
@@ -274,12 +275,20 @@ body {
   width: 50%;
 }
 .question {
-  font-size: 150%;
-  margin-left: 15%
+  font-size: 170%;
+  border-radius: 5px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  margin-right: 13%;
+  border: solid #3AAFA9;
+  border-width: 2px;
+  margin-bottom: 5%;
+  background-color:#3AAFA9 ;
+  color: white;
 }
-.question1 {
-  font-size: 150%;
-}
+
 .box-first {
   background-color: white;
   display: inline-block;

@@ -323,13 +323,14 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 38px;
+  height: 50px;
   color: #fff;
   border: none;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 22px;
   border-radius: 6px;
 }
 .skip_button{

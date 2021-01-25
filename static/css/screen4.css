@@ -11,8 +11,18 @@ body {
   position: relative;
 }
 .question {
-  font-size: 150%;
-  margin-left: 5%
+  font-size: 170%;
+  border-radius: 5px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  margin-right: 13%;
+  border: solid #3AAFA9;
+  border-width: 2px;
+  margin-bottom: 5%;
+  background-color:#3AAFA9 ;
+  color: white;
 }
 .question1 {
   font-size: 150%;
@@ -50,7 +60,7 @@ body {
 
 .sub-bottom1 {
   width: 100%;
-  height: 100%;
+  height: 85%;
   position: relative;
   overflow: hidden;
   background-image: url("../images/background_image.png");
@@ -71,7 +81,7 @@ body {
   text-align: center;
   text-decoration: none;
   font-size: 22px;
-  margin-top: 1%;
+  margin-top: 3%;
   margin-left: auto;
   margin-right: auto;
   font-family: "Nunito";
@@ -259,9 +269,11 @@ body {
   position: absolute;
   top: 50%;
   left: 30%;
-  width: 50%;
+  width: 60%;
   min-width: 100px;
   transform: translate(-50%, -50%);
+  background-color: gray;
+  color: red;
 }
 .sub-right {
   float: left;
