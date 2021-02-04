@@ -69,7 +69,7 @@ body {
 }
 .last {
   text-align: center;
-  height: 20%;
+  height: 30%;
   width: 100%;
 }
 .last button {
@@ -81,7 +81,7 @@ body {
   text-align: center;
   text-decoration: none;
   font-size: 22px;
-  margin-top: 3%;
+  margin-top: 8%;
   margin-left: auto;
   margin-right: auto;
   font-family: "Nunito";
@@ -265,15 +265,49 @@ body {
   position: relative;
   align-items: left;
 }
-.sub-left audio {
-  position: absolute;
-  top: 50%;
+.background {
+  position: relative;
+  top: 49%;
   left: 30%;
-  width: 60%;
-  min-width: 100px;
+  width: 62.5%;
+  min-width: 200px;
   transform: translate(-50%, -50%);
-  background-color: gray;
-  color: red;
+  min-width: 102px;
+  height: 20%;
+  background-color: #3AAFA9;
+  padding: 1%;
+  border-radius: 30px;
+}
+.background audio {
+  position: relative;
+  top: 49%;
+  left: 50%;
+  width: 100%;
+  min-width: 200px;
+  transform: translate(-50%, -50%);
+  
+}
+.background1 {
+  position: relative;
+  top: 49%;
+  left: 30%;
+  width: 62.5%;
+  min-width: 200px;
+  transform: translate(-50%, -50%);
+  min-width: 102px;
+  height: 18%;
+  background-color:#3AAFA9;
+  padding: 1%;
+  border-radius: 30px;
+}
+.background1 audio {
+  position: relative;
+  top: 49%;
+  left: 50%;
+  width: 100%;
+  min-width: 200px;
+  transform: translate(-50%, -50%);
+  
 }
 .sub-right {
   float: left;
