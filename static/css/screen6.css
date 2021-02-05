@@ -373,6 +373,8 @@ body {
   background-color: #3aafa9;
   border: 1px solid #3aafa9;
   color: white;
+  padding-bottom: 5%;
+  border-radius: 7px;
 }
 
 .box-second {
@@ -413,6 +415,9 @@ body {
   background-color: #3aafa9;
   border: 1px solid #3aafa9;
   color: white;
+  padding-bottom: 5%;
+  border-radius: 7px;
+
 }
 
 .box-third {
@@ -453,6 +458,9 @@ body {
   background-color: #3aafa9;
   border: 1px solid #3aafa9;
   color: white;
+  padding-bottom: 5%;
+  border-radius: 7px;
+
 }
 
 .box-fourth {
@@ -493,6 +501,10 @@ body {
   background-color: #3aafa9;
   border: 1px solid #3aafa9;
   color: white;
+  padding-bottom: 5%;
+  border-radius: 7px;
+
+
 }
 
 .box-fifth {
@@ -532,6 +544,10 @@ body {
   background-color: #3aafa9;
   border: 1px solid #3aafa9;
   color: white;
+  padding-bottom: 5%;
+  border-radius: 7px;
+
+
 }
 .box-sixth {
   display: inline-block;
@@ -571,6 +587,9 @@ body {
   background-color: #3aafa9;
   border: 1px solid #3aafa9;
   color: white;
+  padding-bottom: 5%;
+  border-radius: 7px;
+
 }
 .box-seventh {
   display: inline-block;
@@ -609,6 +628,9 @@ body {
   background-color: #3aafa9;
   border: 1px solid #3aafa9;
   color: white;
+  padding-bottom: 5%;
+  border-radius: 7px;
+
 }
 .box-eighth {
   display: inline-block;
@@ -647,6 +669,10 @@ body {
   background-color: #3aafa9;
   border: 1px solid #3aafa9;
   color: white;
+  padding-bottom: 5%;
+  border-radius: 7px;
+
+
 }
 .box-ninth {
   display: inline-block;
@@ -681,10 +707,15 @@ body {
   align-self: center;
 }
 
+`
 .selected-ninth {
   background-color: #3aafa9;
   border: 1px solid #3aafa9;
   color: white;
+  padding-bottom: 5%;
+  border-radius: 7px;
+
+
 }
 .test_div1 {
   display: none;
