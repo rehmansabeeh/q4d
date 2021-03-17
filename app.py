@@ -41,17 +41,11 @@ def login():
     if request.method == 'POST':
         users = mongo.db.users
         lusers = users.find_one({'user_name': request.form['username']})
-        print(lusers)
         if lusers:
             print(bcrypt.hashpw(request.form['pass'].encode(
                 'utf-8'), lusers['password']))
             if bcrypt.hashpw(request.form['pass'].encode('utf-8'), lusers['password']) == lusers['password']:
-                if lusers['administrator']=='True':
-                    print('admin')
-                    return redirect(url_for('admin'))
-                else:
-                    print('user')
-                    return redirect(url_for('thank_you_page'))
+                return redirect(url_for('thank_you_page'))
             else:
                 print("invalid credentials")
                 return redirect(url_for('login'))
@@ -94,18 +88,16 @@ def register_3():
                                       {"user_id": ObjectId(user_id),
                                        'user_name': data_user['username'],
                                        'password': hashpass,
-                                       'email': previous_data["email"],
-                                       'administrator' : 'false'}
+                                       'email': previous_data["email"]},
                                       )
             elif "number" in temp_keys:
                 users.find_and_modify({"user_id": ObjectId(user_id)},
                                       {"user_id": ObjectId(user_id),
                                        'user_name': data_user['entered_username_user'],
                                        'password': hashpass,
-                                       'number': previous_data["number"],
-                                       'administrator' : 'false'}
+                                       'number': previous_data["number"]},
                                       )
-            res = make_response(
+            res = res = make_response(
                 jsonify({'message': "successful"}))
             return res
         else:
@@ -417,7 +409,7 @@ def create_profile_3():
         _id = users.find_and_modify(
             {"_id": user_id},
             {'name': lusers['name'], 'date_of_birth': lusers['date_of_birth'], 'gender_user': lusers['gender_user'], 'grade_selected_user': lusers['grade_selected_user'], 'selected_education_user':
-                lusers['selected_education_user'], 'first_language_Urdu': data['first_language_Urdu'], 'bilingual_Urdu': data['bilingual_Urdu'], 'reading_writing_in_Urdu': data['reading_writing_in_Urdu']}
+                lusers['selected_education_user'], 'first_language_Urdu': data['first_language_Urdu'], 'bilingual_Urdu': data['bilingual_Urdu'], 'reading_writing_in_Urdu': data['reading_writing_in_Urdu'], 'dyslexia_diagnosed_condition' : data['dyslexia_diagnosed_condition']}
         )
         user_id = str(_id.get('_id'))
         print("User ID IN REPLACE3", user_id)
@@ -426,77 +418,6 @@ def create_profile_3():
         return res
 
     return render_template('DyslexiaScreen3.html')
-
-@app.route('/admin', methods=['POST', 'GET'])
-def admin():
-    users = mongo.db.name_age_gender
-    scores=mongo.db.Scores
-    if request.method == 'POST':
-        data_to_send=[]
-        data = request.get_json(force=True)
-
-        if data['selected_filter_sent']=='Gender':
-            dummy=users.find({'gender_user': data['gender']})
-            for i in dummy:
-                temp_list=[]
-                user_scores=scores.find({"user_id": i['_id']})
-                user_scores=list(user_scores)
-                print(user_scores[0]['attempted_questions'])
-                temp_list=[i['name'], user_scores[0]['attempted_questions'], user_scores[0]['score']]
-                data_to_send.append(temp_list)
-            res = make_response(
-            jsonify({'message': "successful", "list_passed": data_to_send}))
-        
-        elif data['selected_filter_sent']=='Date':
-            dummy=users.find({'date_of_birth': [data['entered_day_user'],data['entered_month_user'],data['entered_year_user']]})
-            for i in dummy:
-                temp_list=[]
-                user_scores=scores.find({"user_id": i['_id']})
-                user_scores=list(user_scores)
-                print(user_scores[0]['attempted_questions'])
-                temp_list=[i['name'], user_scores[0]['attempted_questions'], user_scores[0]['score']]
-                data_to_send.append(temp_list)
-            res = make_response(
-            jsonify({'message': "successful", "list_passed": data_to_send}))
-
-        elif data['selected_filter_sent']=='Language':
-            lan=""
-            if data['language'] =="Urdu":
-                lan='Yes'
-            else:
-                lan='No'
-
-            dummy=users.find({'first_language_Urdu': lan})
-            for i in dummy:
-                temp_list=[]
-                user_scores=scores.find({"user_id": i['_id']})
-                user_scores=list(user_scores)
-                print(user_scores[0]['attempted_questions'])
-                temp_list=[i['name'], user_scores[0]['attempted_questions'], user_scores[0]['score']]
-                data_to_send.append(temp_list)
-            res = make_response(
-            jsonify({'message': "successful", "list_passed": data_to_send}))
-        
-        elif data['selected_filter_sent']=='Education Level':
-            print(data)
-            if data['grade']==None:
-                dummy=users.find({'selected_education_user': data['education_level']})
-            else:
-                dummy=users.find({'grade_selected_user':data['grade']})
-            
-            for i in dummy:
-                temp_list=[]
-                user_scores=scores.find({"user_id": i['_id']})
-                user_scores=list(user_scores)
-                print(user_scores[0]['attempted_questions'])
-                temp_list=[i['name'], user_scores[0]['attempted_questions'], user_scores[0]['score']]
-                data_to_send.append(temp_list)
-            res = make_response(
-            jsonify({'message': "successful", "list_passed": data_to_send}))
-        
-        return res
-    else:
-        return render_template("database_filters.html")
 
 
 @app.route('/q1_quiz', methods=['POST', 'GET'])
@@ -509,28 +430,17 @@ def q1_quiz():
         # <========Need to find correct answers here============>
         # correct_answers =
         score = 0
-        attempted_questions=0
         mcqs_answers = request.get_json(force=True)
-
         print("Answers: ", mcqs_answers)
-        for answers in mcqs_answers['selected']:
-            if answers!= None:
-                attempted_questions+=1
         for element in range(len(mcqs_answers['selected'])):
-            # print( "correct option is" ,mcqs_answers['correct_answers'][element])
             if mcqs_answers['selected'][element] == mcqs_answers['correct_answers'][element]:
                 score += 1
-                # print( "option we choose is ", mcqs_answers['selected'][element])
-            
-
-        print(attempted_questions)
-        print(score)
         user_id = mcqs_answers['query_variable_in_url']
         # print("USERNAMEEEEE2 ", username )
         user_id = ObjectId(user_id)
         add_score = mongo.db.Scores
         add_score.insert_one(
-            {'user_id': user_id, "score": score, "attempted_questions": attempted_questions }
+            {'user_id': user_id, "quiz_type": "picture_word", "score": score}
         )
         user_id = str(user_id)
         res = make_response(
@@ -544,13 +454,8 @@ def q1_quiz():
         user_id = ObjectId(user_id)
         user_data = users.find_one({'_id': user_id})
         print("User grade", user_data['grade_selected_user'])
-        data={}
-        if user_data['grade_selected_user'] == 3:
-            data = questions.find(
-                {'q_level': user_data['grade_selected_user'], 'question_type': 'picture_word'})
-        else:
-            data = questions.find(
-                {'q_level': 3, 'question_type': 'picture_word'})
+        data = questions.find(
+            {'q_level': user_data['grade_selected_user'], 'question_type': 'picture_word'})
         data = list(data)
         print("Length of Data: ", len(data))
         x = random.sample(range(len(data)), 9)
@@ -593,36 +498,23 @@ def q2_quiz():
 
     print("Q2 QUIZ", request.method)
     questions = mongo.db.Questions
-    
     if request.method == 'POST':
 
         # <========Need to find correct answers here============>
         # correct_answers =
         score = 0
-        attempted_questions=0
         mcqs_answers = request.get_json(force=True)
         print("Answers: ", mcqs_answers)
-
-        for answers in mcqs_answers['entered']:
-            if answers!= None:
-                attempted_questions+=1
         for element in range(len(mcqs_answers['entered'])):
             if mcqs_answers['entered'][element] == mcqs_answers['correct_answers'][element]:
                 score += 1
-
         user_id = mcqs_answers['query_variable_in_url']
+        # print("USERNAMEEEEE2 ", username )
         user_id = ObjectId(user_id)
         add_score = mongo.db.Scores
-
-        user_scores = add_score.find_one({'user_id': user_id})
-        new_score= score+ user_scores['score']
-        new_attempted_questions= attempted_questions + user_scores['attempted_questions']
-        
-        add_score.find_and_modify(
-            {"user_id": user_id},
-            {'user_id': user_id, 'score': new_score, 'attempted_questions': new_attempted_questions}
+        add_score.insert_one(
+            {'user_id': user_id, "quiz_type": "picture_word_typing", "score": score}
         )
-
         user_id = str(user_id)
         res = make_response(
             jsonify({'message': "successful", "id_to_be_passed": user_id}))
@@ -634,13 +526,8 @@ def q2_quiz():
         # print("USERNAMEEEEE2 ", username )
         user_id = ObjectId(user_id)
         user_data = users.find_one({'_id': user_id})
-        data={}
-        if user_data['grade_selected_user'] == 3:
-            data = questions.find(
-                {'q_level': user_data['grade_selected_user'], 'question_type': 'picture_word'})
-        else:
-            data = questions.find(
-                {'q_level': 3, 'question_type': 'picture_word'})
+        data = questions.find(
+            {'q_level': user_data['grade_selected_user'], 'question_type': 'picture_word'})
         data = list(data)
         x = random.sample(range(len(data)), 9)
         print("index of questions that have been selected randomly ", x)
@@ -663,30 +550,18 @@ def q3_quiz():
         # <========Need to find correct answers here============>
         # correct_answers =
         score = 0
-        attempted_questions=0
         mcqs_answers = request.get_json(force=True)
         print("Answers: ", mcqs_answers)
-
-        for answers in mcqs_answers['selected']:
-            if answers!= None:
-                attempted_questions+=1
         for element in range(len(mcqs_answers['selected'])):
             if mcqs_answers['selected'][element] == mcqs_answers['correct_answers'][element]:
                 score += 1
-
         user_id = mcqs_answers['query_variable_in_url']
+        # print("USERNAMEEEEE2 ", username )
         user_id = ObjectId(user_id)
         add_score = mongo.db.Scores
-
-        user_scores = add_score.find_one({'user_id': user_id})
-        new_score= score+ user_scores['score']
-        new_attempted_questions= attempted_questions + user_scores['attempted_questions']
-        
-        add_score.find_and_modify(
-            {"user_id": user_id},
-            {'user_id': user_id, 'score': new_score, 'attempted_questions': new_attempted_questions}
+        add_score.insert_one(
+            {'user_id': user_id, "quiz_type": "audio_word", "score": score}
         )
-
         user_id = str(user_id)
         res = make_response(
             jsonify({'message': "successful", "id_to_be_passed": user_id}))
@@ -698,13 +573,8 @@ def q3_quiz():
         # print("USERNAMEEEEE2 ", username )
         user_id = ObjectId(user_id)
         user_data = users.find_one({'_id': user_id})
-        data={}
-        if user_data['grade_selected_user'] == 3:
-            data = questions.find(
-                {'q_level': user_data['grade_selected_user'], 'question_type': 'audio_word'})
-        else:
-            data = questions.find(
-                {'q_level': 3, 'question_type': 'audio_word'})
+        data = questions.find(
+            {'q_level': user_data['grade_selected_user'], 'question_type': 'audio_word'})
         data = list(data)
         x = random.sample(range(len(data)), 9)
         print("index of questions that have been selected randomly ", x)
@@ -749,30 +619,18 @@ def q4_quiz():
         # <========Need to find correct answers here============>
         # correct_answers =
         score = 0
-        attempted_questions=0
         mcqs_answers = request.get_json(force=True)
         print("Answers: ", mcqs_answers)
-
-        for answers in mcqs_answers['entered']:
-            if answers!= None:
-                attempted_questions+=1
-        for element in range(len(mcqs_answers['entered'])):
-            if mcqs_answers['entered'][element] == mcqs_answers['correct_answers'][element]:
-                score += 1
-
+        # for element in range(len(mcqs_answers['entered'])):
+        #     if mcqs_answers['entered'][element] == mcqs_answers['correct_answers'][element]:
+        #         score += 1
         user_id = mcqs_answers['query_variable_in_url']
+        # print("USERNAMEEEEE2 ", username )
         user_id = ObjectId(user_id)
-        add_score = mongo.db.Scores
-
-        user_scores = add_score.find_one({'user_id': user_id})
-        new_score= score+ user_scores['score']
-        new_attempted_questions= attempted_questions + user_scores['attempted_questions']
-        
-        add_score.find_and_modify(
-            {"user_id": user_id},
-            {'user_id': user_id, 'score': new_score, 'attempted_questions': new_attempted_questions}
-        )
-
+        # add_score = mongo.db.Scores
+        # add_score.insert_one(
+        #         {'user_id' : user_id, "quiz_type": "audio_word" , "score" : score }
+        #         )
         user_id = str(user_id)
         res = make_response(
             jsonify({'message': "successful", "id_to_be_passed": user_id}))
@@ -783,13 +641,8 @@ def q4_quiz():
         # print("USERNAMEEEEE2 ", username )
         user_id = ObjectId(user_id)
         user_data = users.find_one({'_id': user_id})
-        data={}
-        if user_data['grade_selected_user'] == 3:
-            data = questions.find(
-                {'q_level': user_data['grade_selected_user'], 'question_type': 'audio_word'})
-        else:
-            data = questions.find(
-                {'q_level': 3, 'question_type': 'audio_word'})
+        data = questions.find(
+            {'q_level': user_data['grade_selected_user'], 'question_type': 'audio_word'})
         data = list(data)
         x = random.sample(range(len(data)), 9)
         print("index of questions that have been selected randomly ", x)
