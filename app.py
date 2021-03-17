@@ -405,7 +405,7 @@ def create_profile_3():
 
         lusers = users.find_one({'_id': user_id})
         print(lusers['_id'])
-
+        print(data['dyslexia_diagnosed_condition'])
         _id = users.find_and_modify(
             {"_id": user_id},
             {'name': lusers['name'], 'date_of_birth': lusers['date_of_birth'], 'gender_user': lusers['gender_user'], 'grade_selected_user': lusers['grade_selected_user'], 'selected_education_user':
