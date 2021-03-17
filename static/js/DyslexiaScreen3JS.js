@@ -79,6 +79,9 @@ function move() {
     var read_write_rarely = 0;
     var first_language = "";
     var bilingual = "";
+    var dyslexic_or_not = "";
+    var dyslexic_or_not_yes = 0;
+    var dyslexic_or_not_no = 0;
     var reading_writing_in_Urdu = "";
 
 
@@ -291,6 +294,112 @@ else{
 }
 bilingual_no++;
     });
+
+// <----------------------------------------------------------------------------------->
+$('.dyslexic_or_not_1').click(function() {
+      
+  
+      $('.dyslexic_or_not_2').css({
+          'border': '1px solid #B4ADB0',
+          'width': '100%',
+          'padding': '10px',
+          'float': 'left',
+          'text-align': 'center',
+          'border-radius': '6px',
+          'font-weight': 'initial',
+          'background-color': '#fff',
+          'color': '#B4ADB0',
+          'transition': '0.3s ease' 
+          });
+          
+if(dyslexic_or_not_no%2 != 0){
+    dyslexic_or_not_no++;
+}
+
+
+
+if(dyslexic_or_not_yes%2 == 0){
+  dyslexic_or_not = "Yes";
+  $('.dyslexic_or_not_1').css({
+      'border': 'none',
+      'border-radius': '6px',
+      'background-color': '#3AAFA9',
+      'color': '#fff'
+  });
+
+}
+
+else{
+  dyslexic_or_not = "";
+  $('.dyslexic_or_not_1').css({
+    'border': '1px solid #B4ADB0',
+    'width': '100%',
+    'padding': '10px',
+    'float': 'left',
+    'text-align': 'center',
+    'border-radius': '6px',
+    'font-weight': 'initial',
+    'background-color': '#fff',
+    'color': '#B4ADB0',
+    'transition': '0.3s ease' 
+    });
+}
+dyslexic_or_not_yes++;
+    });
+
+
+$('.dyslexic_or_not_2').click(function() {
+      
+      
+  
+      $('.dyslexic_or_not_1').css({
+          'border': '1px solid #B4ADB0',
+          'width': '100%',
+          'padding': '10px',
+          'float': 'left',
+          'text-align': 'center',
+          'border-radius': '6px',
+          'font-weight': 'initial',
+          'background-color': '#fff',
+          'color': '#B4ADB0',
+          'transition': '0.3s ease' 
+          });
+          
+if(dyslexic_or_not_yes%2 != 0){
+    dyslexic_or_not_yes++;
+}
+
+
+
+if(dyslexic_or_not_no%2 == 0){
+  dyslexic_or_not = "No";
+  $('.dyslexic_or_not_2').css({
+      'border': 'none',
+      'border-radius': '6px',
+      'background-color': '#3AAFA9',
+      'color': '#fff'
+  });
+
+}
+
+else{
+  dyslexic_or_not = "";
+  $('.dyslexic_or_not_2').css({
+    'border': '1px solid #B4ADB0',
+    'width': '100%',
+    'padding': '10px',
+    'float': 'left',
+    'text-align': 'center',
+    'border-radius': '6px',
+    'font-weight': 'initial',
+    'background-color': '#fff',
+    'color': '#B4ADB0',
+    'transition': '0.3s ease' 
+    });
+}
+dyslexic_or_not_no++;
+    });
+//<------------------------------------------------------------------------------------------->
    
 
 $('.frequently_box').click(function() {
@@ -499,7 +608,7 @@ console.log(myParam)
 
 $('.next_button').click(function() {
  
-  if(first_language == "" || bilingual == "" || reading_writing_in_Urdu == "")
+  if(first_language == "" || bilingual == "" || reading_writing_in_Urdu == "" || dyslexic_or_not == "")
   {
     alert("Kindly fill all the fields!")
   }
@@ -512,6 +621,7 @@ $('.next_button').click(function() {
       first_language_Urdu : first_language,
       bilingual_Urdu : bilingual,
       reading_writing_in_Urdu : reading_writing_in_Urdu,
+      dyslexia_diagnosed_condition : dyslexic_or_not,
       query_variable_in_url: myParam
     }),
     cache : 'no-store'
