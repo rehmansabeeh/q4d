@@ -554,7 +554,36 @@ def q1_quiz():
         user_id = ObjectId(user_id)
         user_data = users.find_one({'_id': user_id})
         print("User grade", user_data['grade_selected_user'])
+        # data_all=[]
         data={}
+        # data2={}
+        # data3={}
+
+        # if user_data['grade_selected_user'] <=8:
+            #  data = list(questions.find(
+            #     {'q_level': user_data['grade_selected_user'], 'question_type': 'picture_word'}))
+            # data2= list(questions.find(
+            #     {'q_level': user_data['grade_selected_user']+1, 'question_type': 'picture_word'}))
+            # data3 = list(questions.find(
+            #     {'q_level': user_data['grade_selected_user']+2, 'question_type': 'picture_word'}))
+            # data_all.append([data,data2,data3])
+        # elif user_data['grade_selected_user'] ==9:
+            #  data = list(questions.find(
+            #     {'q_level': user_data['grade_selected_user'], 'question_type': 'picture_word'}))
+            # data2= list(questions.find(
+            #     {'q_level': user_data['grade_selected_user']+1, 'question_type': 'picture_word'}))
+            # data3 = list(questions.find(
+            #     {'selected_education_user': "collage", 'question_type': 'picture_word'}))
+            # data_all.append([data,data2,data3])
+        # else:
+            #  data = list(questions.find(
+            #     {'q_level': 10, 'question_type': 'picture_word'}))
+            # data2= list(questions.find(
+            #     {'selected_education_user': "collage", 'question_type': 'picture_word'}))
+            # data = list(questions.find(
+            #     {'selected_education_user': "university", 'question_type': 'picture_word'}))
+            # data_all.append([data,data2,data3])
+
         if user_data['grade_selected_user'] == 3:
             data = questions.find(
                 {'q_level': user_data['grade_selected_user'], 'question_type': 'picture_word'})
@@ -562,20 +591,30 @@ def q1_quiz():
             data = questions.find(
                 {'q_level': 3, 'question_type': 'picture_word'})
         data = list(data)
+        # x_all=[]
+        # for i in data_all:
+            # x = random.sample(range(len(i)), 3)
+            # x_all.append(x)
         print("Length of Data: ", len(data))
         x = random.sample(range(len(data)), 9)
+        # x2 = random.sample(range(len(data)), 3)
+        # x3 = random.sample(range(len(data)), 3)
+
         print("index of questions that have been selected randomly ", x)
         questions_to_send = []
-        for i in x:
-            temp = {'actual_word': "", 'image': data[i]['image'], 'option_1': "",
+        #for index in range(len(data_all)):
+        for i in x : #add index to x[index]
+            temp = {'actual_word': "", 'image': data[i]['image'], 'option_1': "", #instead of image add data[index][i]['data']
                     'option_2': "", 'option_3': "", 'option_4': ""}
+            # remove this aswell
             keys = data[i].keys()
             print("total number of keys in a question ", keys)
             total_options = []
+            # remove this for loop
             for k in keys:
-
                 if "option" in k:
                     total_options.append(data[i][k])
+            # total_options  = data[index]['options']
             print("total number of options for that question ", total_options)
             options_to_be_selected = []
             index_of_options = random.sample(range(len(total_options)), 3)
@@ -594,6 +633,7 @@ def q1_quiz():
             temp['option_4'] = options_to_be_selected[3]
             data_of_one_question = temp
             questions_to_send.append(data_of_one_question)
+        
 
         return render_template("screen2_ayesha.html", data=questions_to_send)
 
