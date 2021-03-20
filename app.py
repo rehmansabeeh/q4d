@@ -5,7 +5,6 @@ import json
 from bson import ObjectId
 import random
 import re
-import pandas as pd
 
 app = Flask(__name__)
 
@@ -20,11 +19,6 @@ mongo = PyMongo(app)
 def index():
     if request.method == 'POST':
         print('hello')
-    # users = mongo.db.Questions
-    # questions=pd.read_csv('questions.csv')
-    # for index, row in questions.iterrows():
-    #     options=row['options'].strip('[]').replace("'","").split(',')
-    #     users.insert_one({'question_type': row['question_type'], 'q_level': row['q_level'],'actual_word': row['actual_word'], 'options': options, 'data': row['data']})
     return redirect(url_for("homepage"))
 
 @app.route('/homepage', methods=['GET', 'POST'])
