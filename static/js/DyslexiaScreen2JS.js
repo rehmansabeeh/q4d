@@ -287,7 +287,6 @@ $('.circle_grade_option_0').click(function() {
         // $('.circle_grade_option_0').addClass('selected_grade');
         selected_grade = 1
         
-        print("ZERO CLICK")
         $('.circle_grade_option_0').css({
             'color': 'white',
             'background-color': '#3AAFA9',

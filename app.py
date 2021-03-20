@@ -5,6 +5,7 @@ import json
 from bson import ObjectId
 import random
 import re
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -19,8 +20,12 @@ mongo = PyMongo(app)
 def index():
     if request.method == 'POST':
         print('hello')
+    # users = mongo.db.Questions
+    # questions=pd.read_csv('questions.csv')
+    # for index, row in questions.iterrows():
+    #     options=row['options'].strip('[]').replace("'","").split(',')
+    #     users.insert_one({'question_type': row['question_type'], 'q_level': row['q_level'],'actual_word': row['actual_word'], 'options': options, 'data': row['data']})
     return redirect(url_for("homepage"))
-
 
 @app.route('/homepage', methods=['GET', 'POST'])
 def homepage():
@@ -554,87 +559,81 @@ def q1_quiz():
         user_id = ObjectId(user_id)
         user_data = users.find_one({'_id': user_id})
         print("User grade", user_data['grade_selected_user'])
-        # data_all=[]
-        data={}
-        # data2={}
-        # data3={}
-
-        # if user_data['grade_selected_user'] <=8:
-            #  data = list(questions.find(
-            #     {'q_level': user_data['grade_selected_user'], 'question_type': 'picture_word'}))
-            # data2= list(questions.find(
-            #     {'q_level': user_data['grade_selected_user']+1, 'question_type': 'picture_word'}))
-            # data3 = list(questions.find(
-            #     {'q_level': user_data['grade_selected_user']+2, 'question_type': 'picture_word'}))
-            # data_all.append([data,data2,data3])
-        # elif user_data['grade_selected_user'] ==9:
-            #  data = list(questions.find(
-            #     {'q_level': user_data['grade_selected_user'], 'question_type': 'picture_word'}))
-            # data2= list(questions.find(
-            #     {'q_level': user_data['grade_selected_user']+1, 'question_type': 'picture_word'}))
-            # data3 = list(questions.find(
-            #     {'selected_education_user': "collage", 'question_type': 'picture_word'}))
-            # data_all.append([data,data2,data3])
-        # else:
-            #  data = list(questions.find(
-            #     {'q_level': 10, 'question_type': 'picture_word'}))
-            # data2= list(questions.find(
-            #     {'selected_education_user': "collage", 'question_type': 'picture_word'}))
-            # data = list(questions.find(
-            #     {'selected_education_user': "university", 'question_type': 'picture_word'}))
-            # data_all.append([data,data2,data3])
-
-        if user_data['grade_selected_user'] == 3:
-            data = questions.find(
-                {'q_level': user_data['grade_selected_user'], 'question_type': 'picture_word'})
-        else:
-            data = questions.find(
-                {'q_level': 3, 'question_type': 'picture_word'})
-        data = list(data)
-        # x_all=[]
-        # for i in data_all:
-            # x = random.sample(range(len(i)), 3)
-            # x_all.append(x)
-        print("Length of Data: ", len(data))
-        x = random.sample(range(len(data)), 9)
-        # x2 = random.sample(range(len(data)), 3)
-        # x3 = random.sample(range(len(data)), 3)
-
-        print("index of questions that have been selected randomly ", x)
-        questions_to_send = []
-        #for index in range(len(data_all)):
-        for i in x : #add index to x[index]
-            temp = {'actual_word': "", 'image': data[i]['image'], 'option_1': "", #instead of image add data[index][i]['data']
-                    'option_2': "", 'option_3': "", 'option_4': ""}
-            # remove this aswell
-            keys = data[i].keys()
-            print("total number of keys in a question ", keys)
-            total_options = []
-            # remove this for loop
-            for k in keys:
-                if "option" in k:
-                    total_options.append(data[i][k])
-            # total_options  = data[index]['options']
-            print("total number of options for that question ", total_options)
-            options_to_be_selected = []
-            index_of_options = random.sample(range(len(total_options)), 3)
-            print("index of options that will be selected", index_of_options)
-            for index in index_of_options:
-                options_to_be_selected.append(total_options[index])
-
-            options_to_be_selected.append(data[i]['actual_word'])
-            print("the answers that will be send to front end ",
-                  options_to_be_selected)
-            random.shuffle(options_to_be_selected)
-            temp['actual_word'] = data[i]['actual_word']
-            temp['option_1'] = options_to_be_selected[0]
-            temp['option_2'] = options_to_be_selected[1]
-            temp['option_3'] = options_to_be_selected[2]
-            temp['option_4'] = options_to_be_selected[3]
-            data_of_one_question = temp
-            questions_to_send.append(data_of_one_question)
         
+        
+        to_check=''
+        if user_data['grade_selected_user']=="":
+            to_check=str(user_data['selected_education_user'])
+        else:
+            to_check=str(user_data['grade_selected_user'])
+        data_all=[]
+        data={}
+        data2={}
+        data3={}
+        # value.isdigit()
+        print(user_data['grade_selected_user'])
+        if to_check.isdigit():
+            if int(to_check) <=8:
+                data = list(questions.find(
+                    {'q_level': str(to_check), 'question_type': 'mcq'}))
+                data2= list(questions.find(
+                    {'q_level': str(int(to_check)+1), 'question_type': 'mcq'}))
+                data3 = list(questions.find(
+                    {'q_level': str(int(to_check)+2), 'question_type': 'mcq'}))
+                data_all.append(data)
+                data_all.append(data2)
+                data_all.append(data3)
+            elif int(to_check) ==9:
+                data = list(questions.find(
+                    {'q_level': str(int(to_check)), 'question_type': 'mcq'}))
+                data2= list(questions.find(
+                    {'q_level': str(int(to_check)+1), 'question_type': 'mcq'}))
+                data3 = list(questions.find(
+                    {'q_level': "college", 'question_type': 'mcq'}))
+                data_all.append(data)
+                data_all.append(data2)
+                data_all.append(data3)
+        if len(to_check)>=2:
+            data = list(questions.find(
+                {'q_level': '10', 'question_type': 'mcq'}))
+            data2= list(questions.find(
+                {'q_level': "college", 'question_type': 'mcq'}))
+            data3 = list(questions.find(
+                {'q_level': "University", 'question_type': 'mcq'}))
+            data_all.append(data)
+            data_all.append(data2)
+            data_all.append(data3)
 
+        
+        x_all=[]
+        for i in data_all:
+            # print(len(i))
+            x = random.sample(range(len(i)), 3)
+            # print(x)
+            x_all.append(x)
+        
+        questions_to_send = []
+        for index in range(len(data_all)):
+            for i in x_all[index] : #add index to x[index]
+                temp = {'actual_word': "", 'image': data_all[index][i]['data'], 'option_1': "", #instead of image add data[index][i]['data']
+                        'option_2': "", 'option_3': "", 'option_4': ""}
+                options_to_be_selected = []
+                index_of_options = random.sample(range(len(data_all[index][i]['options'])), 3)
+                for index2 in index_of_options:
+                    options_to_be_selected.append(data_all[index][i]['options'][index2])
+
+                options_to_be_selected.append(data_all[index][i]['actual_word'])
+                
+                random.shuffle(options_to_be_selected)
+                temp['actual_word'] = data_all[index][i]['actual_word']
+                print(temp['actual_word'])
+                temp['option_1'] = options_to_be_selected[0]
+                temp['option_2'] = options_to_be_selected[1]
+                temp['option_3'] = options_to_be_selected[2]
+                temp['option_4'] = options_to_be_selected[3]
+                data_of_one_question = temp
+                questions_to_send.append(data_of_one_question)
+        # print(questions_to_send)
         return render_template("screen2_ayesha.html", data=questions_to_send)
 
 
@@ -659,6 +658,15 @@ def q2_quiz():
         for element in range(len(mcqs_answers['entered'])):
             if mcqs_answers['entered'][element] == mcqs_answers['correct_answers'][element]:
                 score += 1
+        for element in range(len(mcqs_answers['entered'])):
+            data = list(questions.find({'actual_word': mcqs_answers['correct_answers'][element], 'question_type': 'type'}))[0]
+            print(data)
+            if mcqs_answers['entered'][element] not in data['options'] and mcqs_answers['entered'][element] !='' :
+                data['options'].append(mcqs_answers['entered'])
+            
+            questions.find_and_modify({"_id": data['_id']},
+            {'question_type': data['question_type'], 'q_level': data['q_level'], 'actual_word': data['actual_word'],
+                'options': data['options'], 'data': data['data']})
 
         user_id = mcqs_answers['query_variable_in_url']
         user_id = ObjectId(user_id)
@@ -684,22 +692,67 @@ def q2_quiz():
         # print("USERNAMEEEEE2 ", username )
         user_id = ObjectId(user_id)
         user_data = users.find_one({'_id': user_id})
-        data={}
-        if user_data['grade_selected_user'] == 3:
-            data = questions.find(
-                {'q_level': user_data['grade_selected_user'], 'question_type': 'picture_word'})
+        to_check=''
+        if user_data['grade_selected_user']=="":
+            to_check=str(user_data['selected_education_user'])
         else:
-            data = questions.find(
-                {'q_level': 3, 'question_type': 'picture_word'})
-        data = list(data)
-        x = random.sample(range(len(data)), 9)
+            to_check=str(user_data['grade_selected_user'])
+        data_all=[]
+        data={}
+        data2={}
+        data3={}
+        # value.isdigit()
+        print(user_data['grade_selected_user'])
+        if to_check.isdigit():
+            if int(to_check) <=8:
+                data = list(questions.find(
+                    {'q_level': str(to_check), 'question_type': 'type'}))
+                data2= list(questions.find(
+                    {'q_level': str(int(to_check)+1), 'question_type': 'type'}))
+                data3 = list(questions.find(
+                    {'q_level': str(int(to_check)+2), 'question_type': 'type'}))
+                data_all.append(data)
+                data_all.append(data2)
+                data_all.append(data3)
+            elif int(to_check) ==9:
+                data = list(questions.find(
+                    {'q_level': str(int(to_check)), 'question_type': 'type'}))
+                data2= list(questions.find(
+                    {'q_level': str(int(to_check)+1), 'question_type': 'type'}))
+                data3 = list(questions.find(
+                    {'q_level': "college", 'question_type': 'type'}))
+                data_all.append(data)
+                data_all.append(data2)
+                data_all.append(data3)
+        if len(to_check)>=2:
+            data = list(questions.find(
+                {'q_level': '10', 'question_type': 'type'}))
+            data2= list(questions.find(
+                {'q_level': "college", 'question_type': 'type'}))
+            data3 = list(questions.find(
+                {'q_level': "University", 'question_type': 'type'}))
+            data_all.append(data)
+            data_all.append(data2)
+            data_all.append(data3)
+
+
+        x_all=[]
+        for i in data_all:
+            # print(len(i))
+            x = random.sample(range(len(i)), 3)
+            # print(x)
+            x_all.append(x)
+        
         print("index of questions that have been selected randomly ", x)
         questions_to_send = []
-        for i in x:
-            temp = {'actual_word': "", 'image': data[i]['image']}
-            temp['actual_word'] = data[i]['actual_word']
-            data_of_one_question = temp
-            questions_to_send.append(data_of_one_question)
+        for index in range(len(data_all)):
+            for i in x_all[index] :
+                print( data_all[index][i]['actual_word'])
+                temp = {'actual_word': "", 'image': data_all[index][i]['data']}
+                temp['actual_word'] = data_all[index][i]['actual_word']
+                data_of_one_question = temp
+                questions_to_send.append(data_of_one_question)
+
         return render_template("screen3.html", data=questions_to_send)
 
 
@@ -748,44 +801,81 @@ def q3_quiz():
         # print("USERNAMEEEEE2 ", username )
         user_id = ObjectId(user_id)
         user_data = users.find_one({'_id': user_id})
-        data={}
-        if user_data['grade_selected_user'] == 3:
-            data = questions.find(
-                {'q_level': user_data['grade_selected_user'], 'question_type': 'audio_word'})
+        
+        to_check=''
+        if user_data['grade_selected_user']=="":
+            to_check=str(user_data['selected_education_user'])
         else:
-            data = questions.find(
-                {'q_level': 3, 'question_type': 'audio_word'})
-        data = list(data)
-        x = random.sample(range(len(data)), 9)
-        print("index of questions that have been selected randomly ", x)
-        questions_to_send = []
-        for i in x:
-            temp = {'actual_word': "", 'audio': data[i]['audio'], 'option_1': "",
-                    'option_2': "", 'option_3': "", 'option_4': ""}
-            keys = data[i].keys()
-            print("total number of keys in a question ", keys)
-            total_options = []
-            for k in keys:
-                if "option" in k:
-                    total_options.append(data[i][k])
-            print("total number of options for that question ", total_options)
-            options_to_be_selected = []
-            index_of_options = random.sample(range(len(total_options)), 3)
-            print("index of options that will be selected", index_of_options)
-            for index in index_of_options:
-                options_to_be_selected.append(total_options[index])
+            to_check=str(user_data['grade_selected_user'])
+        data_all=[]
+        data={}
+        data2={}
+        data3={}
+        # value.isdigit()
+        print(user_data['grade_selected_user'])
+        if to_check.isdigit():
+            if int(to_check) <=8:
+                data = list(questions.find(
+                    {'q_level': str(to_check), 'question_type': 'audio_word'}))
+                data2= list(questions.find(
+                    {'q_level': str(int(to_check)+1), 'question_type': 'audio_word'}))
+                data3 = list(questions.find(
+                    {'q_level': str(int(to_check)+2), 'question_type': 'audio_word'}))
+                data_all.append(data)
+                data_all.append(data2)
+                data_all.append(data3)
+            elif int(to_check) ==9:
+                data = list(questions.find(
+                    {'q_level': str(int(to_check)), 'question_type': 'audio_word'}))
+                data2= list(questions.find(
+                    {'q_level': str(int(to_check)+1), 'question_type': 'audio_word'}))
+                data3 = list(questions.find(
+                    {'q_level': "college", 'question_type': 'audio_word'}))
+                data_all.append(data)
+                data_all.append(data2)
+                data_all.append(data3)
+        if len(to_check)>=2:
+            data = list(questions.find(
+                {'q_level': '10', 'question_type': 'audio_word'}))
+            data2= list(questions.find(
+                {'q_level': "college", 'question_type': 'audio_word'}))
+            data3 = list(questions.find(
+                {'q_level': "University", 'question_type': 'audio_word'}))
+            data_all.append(data)
+            data_all.append(data2)
+            data_all.append(data3)
 
-            options_to_be_selected.append(data[i]['actual_word'])
-            print("the answers that will be send to front end ",
-                  options_to_be_selected)
-            random.shuffle(options_to_be_selected)
-            temp['actual_word'] = data[i]['actual_word']
-            temp['option_1'] = options_to_be_selected[0]
-            temp['option_2'] = options_to_be_selected[1]
-            temp['option_3'] = options_to_be_selected[2]
-            temp['option_4'] = options_to_be_selected[3]
-            data_of_one_question = temp
-            questions_to_send.append(data_of_one_question)
+        
+        x_all=[]
+        for i in data_all:
+            # print(len(i))
+            x = random.sample(range(len(i)), 3)
+            # print(x)
+            x_all.append(x)
+        
+        questions_to_send = []
+        for index in range(len(data_all)):
+            for i in x_all[index] : #add index to x[index]
+                print(data_all[index][i]['data'])
+                temp = {'actual_word': "", 'audio': data_all[index][i]['data'], 'option_1': "", #instead of image add data[index][i]['data']
+                        'option_2': "", 'option_3': "", 'option_4': ""}
+                options_to_be_selected = []
+                index_of_options = random.sample(range(len(data_all[index][i]['options'])), 3)
+                for index2 in index_of_options:
+                    options_to_be_selected.append(data_all[index][i]['options'][index2])
+
+                options_to_be_selected.append(data_all[index][i]['actual_word'])
+                
+                random.shuffle(options_to_be_selected)
+                temp['actual_word'] = data_all[index][i]['actual_word']
+                print(temp['actual_word'])
+                temp['option_1'] = options_to_be_selected[0]
+                temp['option_2'] = options_to_be_selected[1]
+                temp['option_3'] = options_to_be_selected[2]
+                temp['option_4'] = options_to_be_selected[3]
+                data_of_one_question = temp
+                questions_to_send.append(data_of_one_question)
+
         return render_template("screen4.html", data=questions_to_send)
 
 
@@ -809,6 +899,15 @@ def q4_quiz():
         for element in range(len(mcqs_answers['entered'])):
             if mcqs_answers['entered'][element] == mcqs_answers['correct_answers'][element]:
                 score += 1
+        for element in range(len(mcqs_answers['entered'])):
+            data = list(questions.find({'actual_word': mcqs_answers['correct_answers'][element], 'question_type': 'audio_word'}))[0]
+            print(data)
+            if mcqs_answers['entered'][element] not in data['options'] and mcqs_answers['entered'][element] !='' :
+                data['options'].append(mcqs_answers['entered'])
+            
+            questions.find_and_modify({"_id": data['_id']},
+            {'question_type': data['question_type'], 'q_level': data['q_level'], 'actual_word': data['actual_word'],
+                'options': data['options'], 'data': data['data']})
 
         user_id = mcqs_answers['query_variable_in_url']
         user_id = ObjectId(user_id)
@@ -833,22 +932,68 @@ def q4_quiz():
         # print("USERNAMEEEEE2 ", username )
         user_id = ObjectId(user_id)
         user_data = users.find_one({'_id': user_id})
-        data={}
-        if user_data['grade_selected_user'] == 3:
-            data = questions.find(
-                {'q_level': user_data['grade_selected_user'], 'question_type': 'audio_word'})
+        to_check=''
+        if user_data['grade_selected_user']=="":
+            to_check=str(user_data['selected_education_user'])
         else:
-            data = questions.find(
-                {'q_level': 3, 'question_type': 'audio_word'})
-        data = list(data)
-        x = random.sample(range(len(data)), 9)
+            to_check=str(user_data['grade_selected_user'])
+        data_all=[]
+        data={}
+        data2={}
+        data3={}
+        # value.isdigit()
+        print(user_data['grade_selected_user'])
+        if to_check.isdigit():
+            if int(to_check) <=8:
+                data = list(questions.find(
+                    {'q_level': str(to_check), 'question_type': 'audio_word'}))
+                data2= list(questions.find(
+                    {'q_level': str(int(to_check)+1), 'question_type': 'audio_word'}))
+                data3 = list(questions.find(
+                    {'q_level': str(int(to_check)+2), 'question_type': 'audio_word'}))
+                data_all.append(data)
+                data_all.append(data2)
+                data_all.append(data3)
+            elif int(to_check) ==9:
+                data = list(questions.find(
+                    {'q_level': str(int(to_check)), 'question_type': 'audio_word'}))
+                data2= list(questions.find(
+                    {'q_level': str(int(to_check)+1), 'question_type': 'audio_word'}))
+                data3 = list(questions.find(
+                    {'q_level': "college", 'question_type': 'audio_word'}))
+                data_all.append(data)
+                data_all.append(data2)
+                data_all.append(data3)
+        if len(to_check)>=2:
+            data = list(questions.find(
+                {'q_level': '10', 'question_type': 'audio_word'}))
+            data2= list(questions.find(
+                {'q_level': "college", 'question_type': 'audio_word'}))
+            data3 = list(questions.find(
+                {'q_level': "University", 'question_type': 'audio_word'}))
+            data_all.append(data)
+            data_all.append(data2)
+            data_all.append(data3)
+
+
+        x_all=[]
+        for i in data_all:
+            # print(len(i))
+            x = random.sample(range(len(i)), 3)
+            # print(x)
+            x_all.append(x)
+        
         print("index of questions that have been selected randomly ", x)
         questions_to_send = []
-        for i in x:
-            temp = {'actual_word': "", 'audio': data[i]['audio']}
-            temp['actual_word'] = data[i]['actual_word']
-            data_of_one_question = temp
-            questions_to_send.append(data_of_one_question)
+        for index in range(len(data_all)):
+            for i in x_all[index] :
+                print( data_all[index][i]['actual_word'])
+                print(data_all[index][i]['data'])
+                temp = {'actual_word': "", 'audio': data_all[index][i]['data']}
+                temp['actual_word'] = data_all[index][i]['actual_word']
+                data_of_one_question = temp
+                questions_to_send.append(data_of_one_question)
+    
         return render_template("screen5.html", data=questions_to_send)
 
 
@@ -1038,3 +1183,4 @@ def redirecttohomepage():
 if (__name__ == '__main__'):
     app.secret_key = "abcd"
     app.run(debug=True)
+    

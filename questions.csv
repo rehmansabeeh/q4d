@@ -1,0 +1,156 @@
+question_type,q_level,actual_word,options,data
+audio_word,University,اعتبار,"['اعتبر', 'اغتبار', 'اعنبار']",https://docs.google.com/uc?export=download&id=1qU_3p6xO8H3-8krYhQZQIynYeu7QRYcC
+audio_word,University,متبسم,"['مبتسم', 'منبسم', 'مبسم']",https://docs.google.com/uc?export=download&id=1qRtWPLbfy31y01E3qWGd85nsQuOlb-cQ
+audio_word,University,مصیبت,"['مصبت', 'مضیبت', 'مسیبت']",https://docs.google.com/uc?export=download&id=1qRgxOe4RndBNDGpsJkoBRr2OyDJw4uGO
+audio_word,University,رقابت,"['رفابت', 'رقبت', 'رکابت']",https://docs.google.com/uc?export=download&id=1qR2U-GcbQ--3ZR1-hX99r_P7-ub4gBrn
+audio_word,University,عرفان,"['عرقان', 'عرفن', 'ارفان']",https://docs.google.com/uc?export=download&id=1qPh0Cveob6yyBvetLUTzHR0OaBcYqOri
+audio_word,University,مطلع,"['مظلع', 'متلا', 'مطلغ']",https://docs.google.com/uc?export=download&id=1qJsc5PdTZlDC4t6oeiwR4knNNYH8KiOf
+audio_word,University,قلاش,"['فلاش', 'کلاش', 'قلش']",https://docs.google.com/uc?export=download&id=1qHcLyd2T3XTLuLE0alThouq5Ym2f8UjZ
+audio_word,college,تفصیل,"['تقصیل', 'تفسیل', 'تفصل']",https://docs.google.com/uc?export=download&id=1qGPEzrsHD0NNmcVpaZ43C7YWcG6FdWxM
+audio_word,college,مشتاق,"['متشاق', 'مشتاک', 'مشتق']",https://docs.google.com/uc?export=download&id=1qFHyxJRbOlyfe2ehrNB1JtW9u_xaQkha
+audio_word,college,مستغرق,"['مستعرق', 'متسغرق', 'مستگرک']",https://docs.google.com/uc?export=download&id=1qD1Yn54dSFHhGZGAdmqQyvVLubrrHZGK
+audio_word,college,قباحت,"['فباحت', 'قباخت', 'کباحت']",https://docs.google.com/uc?export=download&id=1qCr6H9nBjYpQWcOc00CX-s7bWH4H3vzL
+audio_word,college,خلش,"['حلش', 'خالش', 'خلس']",https://docs.google.com/uc?export=download&id=1q6ov34dtCDIW2COsXMQ1sbAsmL-7kz-H
+audio_word,college,انفرادی,"['انقرادی', 'انفردی', 'افنرادی']",https://docs.google.com/uc?export=download&id=1q3pqOBOBa_GOPQMtCnZn-1gj6uBd37BG
+audio_word,10,انتقال,"['انتفال', 'انتکال', 'انتقل']",https://docs.google.com/uc?export=download&id=1q2o2nEq540lK4Uva8lrNoNVQiuAEg-J5
+audio_word,10,چاشنی,"['جاشنی', 'چاشتی', 'چشنی']",https://docs.google.com/uc?export=download&id=1pwBbDeT6QJm1iKeJ_VnaVAf_G0bkASvt
+audio_word,10,اتفاق,"['اتفاک', 'انفاق', 'انقاق']",https://docs.google.com/uc?export=download&id=1puiMLNdzje8PjyPuV6Pd2skGjHe2Nlql
+audio_word,10,وظیفہ,"['وطیفہ', 'وزیفا', 'وظیقہ']",https://docs.google.com/uc?export=download&id=1phtfmiUGzITexSF1Z6eHKcpW9iFzOPzR
+audio_word,10,اشتیاق,"['اشتیاک', 'اشتاق', 'عشتیاق']",https://docs.google.com/uc?export=download&id=1pdZjVpUEhxnizfF0z0GNfGFSWdec8TD0
+audio_word,10,مالیدہ,"['مالدہ', 'فالیدہ', 'مادیلہ']",https://docs.google.com/uc?export=download&id=1pbDiOlT5C6A9k0ekVIPSZwH5kxnUo-bN
+audio_word,9,محیط,"['مہیط', 'مھیط', 'محیت', 'محط', 'موحیط']",https://docs.google.com/uc?export=download&id=1pXU6v7KRmVUYSaftY5qCgL0dXKSKours
+audio_word,9,مہارت,"['محارت', 'مھارت', 'ماہارت', 'مہارط']",https://docs.google.com/uc?export=download&id=1pWNoiy_DsRkdgharbQesQVpYU2EEhcpR
+audio_word,9,رضاکار,"['رظاکار', 'رزاکار', 'رذاکار', 'رضاقار', 'رضعکار']",https://docs.google.com/uc?export=download&id=1pR4-SpLIfJS2zGqACQn11qIR1h_Lvung
+audio_word,9,لحظہ,"['لیحظہ', 'لہظہ', 'لھظہ', 'لحضہ', 'لحزہ', 'لحذہ', 'لحظا']",https://docs.google.com/uc?export=download&id=1pOxTOdwN4YTgjszZ7vwoAm0XNvXGbZM-
+audio_word,9,وضاحت,"['وظاحت', 'وزاحت', 'وذاحت', 'وضاھت', 'وضاہت', 'وضاحط']",https://docs.google.com/uc?export=download&id=1pMai8WbyGoP0PstzjjeDk6M9N4Ta7Zob
+audio_word,8,توحید,"['توحیر', 'توحد', 'توھید', 'طوحید', 'طوھید', 'توہید']",https://docs.google.com/uc?export=download&id=1pHaRWZNA9OG4JXfhoLLH2BlM3wi0BjIN
+audio_word,8,ورثہ,"['ورثا', 'ورثھ', 'ورثح', 'ورسہ', 'ورصہ']",https://docs.google.com/uc?export=download&id=1pGAE8VT3HcCd3D2WZMeRTDnOrpUgJxPe
+audio_word,8,واقعات,"['وقعات', 'واقیات', 'واکعات', 'واقعاط', 'واکیات']",https://docs.google.com/uc?export=download&id=1pEzUxZo5nIKGEmpnNZAKkDsmDFWSp2T5
+audio_word,8,نفع,"['نفا', 'نفح', 'نفہ', 'فنا', 'فنع']",https://docs.google.com/uc?export=download&id=1p8FhUtK4KGGdj2pM0XivHM8VlLMxN0-_
+audio_word,8,تفریح,"['تفریہ', 'تفریھ', 'تفرح', 'تفری', 'طفریح']",https://docs.google.com/uc?export=download&id=1p5r8lwzEmlOitucSeWFf4ufuCer4_xC2
+audio_word,7,خارج,"['خارچ', 'خازج', 'حارج']",https://docs.google.com/uc?export=download&id=1p3yKKTL769qG73msz4Z4Lv51X1ZZRgWA
+audio_word,7,درخواست,"['درحواست', 'درکھاست', 'درخاست']",https://docs.google.com/uc?export=download&id=1p057Wbfur_a7QBT6DSpHiMZSa1vkTDwW
+audio_word,7,معاہدہ,"['معاحدہ', 'مغاہدہ', 'معاہدا']",https://docs.google.com/uc?export=download&id=1oulpWf1WuSbqdcehiXFa045b8reooHYq
+audio_word,7,بچہ,"['بجہ', 'بچا', 'بجا']",https://docs.google.com/uc?export=download&id=1oszMMdEgqaWsegZyPwqA2X2KjiGqHIsE
+audio_word,7,برّاعظم,"['برّاعطم', 'برےآزم', 'برّآعظم', 'برّآعزم']",https://docs.google.com/uc?export=download&id=1opvD6dCU8I-VoiLizRHChY-keOQuhxN8
+audio_word,6,خلقت,"['حلقت', 'کلقت', 'خلقت', 'خقلت']",https://docs.google.com/uc?export=download&id=1bCiTa0XXHV0xuT8P06NMPa8cNynXbYcT
+audio_word,6,قطر,"['قظر', 'کتر', 'کطر']",https://docs.google.com/uc?export=download&id=1FdtOkpLORnTfVARrHxID5gYUhpNrzto5
+audio_word,6,معرکہ,"['مغرکہ', 'مارکا', 'معرگہ']",https://docs.google.com/uc?export=download&id=16GsBwSU9zI-FCFMsINT1Vsm6a96ztGMv
+audio_word,6,خاموشی,"['حاموشی', 'خاموسی', 'حاموسی']",https://docs.google.com/uc?export=download&id=1ALq2oJA5SQGVhJ6Jre2ZJVJjktO75URH
+audio_word,6,شعور,"['شغور', 'سعور', 'سور']",https://docs.google.com/uc?export=download&id=1nFGqM2c1j0t71dPXB6hNQcFIZNk8xlwh
+audio_word,6,اطمینان,"['اتمینان', 'اتمنان', 'اطمنان']",https://docs.google.com/uc?export=download&id=1klReFdIg2hmbxm-nign9-eThfQmgqIQi
+audio_word,5,خاص,"['خاس', 'خاث', 'حاث', 'حاس']",https://docs.google.com/uc?export=download&id=1bFOAQdfqLovJT6H-IGCnnsfv6pGutyEL
+audio_word,5,ارکان,"['ارقان', 'اقارن', 'اکارن', 'ارکن']",https://docs.google.com/uc?export=download&id=1NrtHs5gX2pAuREoBF2Omz7wL6_6bWjx-
+audio_word,5,عنوان,"['غنوان', 'انوان', 'عنان']",https://docs.google.com/uc?export=download&id=1ChkExDWRjE1w7KZOqQD0vTJe970hDpMN
+audio_word,5,پکڑ,"['پکر', 'پرک', 'پڑک']",https://docs.google.com/uc?export=download&id=1E2beH0HFbOVIZH2HLQIybKmZx-hlp4_B
+audio_word,5,بہلانا,"['بھلانا', 'بحلانا', 'بلانا', 'بالانا']",https://docs.google.com/uc?export=download&id=1y3WEHNjE125PyL4KHHfzsSa9W7kV-f_E
+audio_word,5,منہ,"['من', 'منھ', 'منح']",https://docs.google.com/uc?export=download&id=1FXXI4rKrQqCiii3GVTOjRylDJfdWdeXc
+audio_word,4,چہارم,"['چارم', 'چھارم', 'چحارم']",https://docs.google.com/uc?export=download&id=1CngBEmK80CLV8MqBi9-0Reo4J_sseEm4
+audio_word,4,کہلاتے,"['کلاتے', 'کھلاتے', 'کحلاتے', 'کہلتے']",https://docs.google.com/uc?export=download&id=1EeVPxohDuM5YTJV3Nq82D2TWHdHcv390
+audio_word,4,کبھار,"['کبہار', 'کبحار', 'کباھر', 'کباہر', 'کباحر']",https://docs.google.com/uc?export=download&id=18QzUHyBADcKj3xr_WnfSgSz3jVwWK120
+audio_word,4,ڈھونڈیں,"['ڈہونڈیں', 'ڈحونڈیں', 'ڈونڈیں']",https://docs.google.com/uc?export=download&id=1rPVzS73lRcm7XPXWZKg1MEld2a7uFNwY
+audio_word,4,شروع,"['سروع', 'سرو', 'شرو']",https://docs.google.com/uc?export=download&id=1kPImwtlf4_1Chda7LDqGn9fRhP_TOAiF
+audio_word,4,اکثر,"['اقثر', 'اقسر', 'اقصر', 'اکصر', 'اکسر', 'اکثر']",https://docs.google.com/uc?export=download&id=1Y5B1WXNTr3Mx0GugFfyEkpnOSD9yU6TW
+audio_word,4,اسم,"['اثم', 'اسعم', 'اثعم']",https://docs.google.com/uc?export=download&id=1A_s3ChpYrNu_nL5BKOMZnDwSmAcO-j8O
+audio_word,4,ترتیب,"['تریتب', 'طرطیب', 'ترطیب', 'طرتیب']",https://docs.google.com/uc?export=download&id=1B_kR05qjJUaMOGv2olZTdd_RHaHFKeLZ
+audio_word,3,دیکھتے,"['دیکہتے', 'دیکحتے', 'دکحتے', 'دکھتے', 'دکہتے', 'دکتے', 'دیکتے']",https://docs.google.com/uc?export=download&id=1eB34h5smj69SUdkH7PXb2PXhvuo5wb-j
+audio_word,3,نقصان,"['نقسان', 'نقثان', 'نکصان']",https://docs.google.com/uc?export=download&id=1MCh3UJgg0cMDo36LLyCjYR8rWKxEnQrn
+audio_word,3,لکھیں,"['لکہیں', 'لکحیں', 'لکیں', 'لھکیں', 'لحکیں', 'لہکیں']",https://docs.google.com/uc?export=download&id=1fpH7aQDWLZ7S1WVJdoLZCfM6r-Ow3yl7
+audio_word,3,جگہوں,"['جگھوں', 'جگحوں', 'جکحوں', 'جکہوں', 'جکھوں', 'جگہو']",https://docs.google.com/uc?export=download&id=1G-l1vnJdFzzInt20zvnERAtiSr4bQ-zn
+audio_word,3,رہتا,"['رھتا', 'رحتا', 'رحا']",https://docs.google.com/uc?export=download&id=1GWibvQohBNZNHN7JY9Zm17uAJzv9EKyd
+audio_word,3,کھڑے,"['کڑے', 'کہڑے', 'کحڑے']",https://docs.google.com/uc?export=download&id=1AqhMqP8DVVQ9cPeJ_Iz0muHVhc_sUV8e
+audio_word,3,اندھیرا,"['اندھرا', 'اندھیرہ', 'اندیرا']",https://docs.google.com/uc?export=download&id=1O0y2h3CMq6WaTs4_KrAbiB9x9N6GcHmF
+audio_word,3,اصلاح,"['اسلا', 'اثلاح', 'اسلاح']",https://docs.google.com/uc?export=download&id=1VGaZcHUMp2Ek50bVVnXDo_k1aH1dtlNt
+audio_word,3,ہمیشہ,"['ہمشہ', 'ہمے شہ', 'حمیشا']",https://docs.google.com/uc?export=download&id=1y0fgMqFtTfIfaG9GNv5VCQGckPy3ovf4
+audio_word,3,جھونکہ,"['جونقہ', 'جھونقا', 'جونکا']",https://docs.google.com/uc?export=download&id=16Z-CNUYjkLRNyOU24L9DcXprbo_ucYLL
+audio_word,3,سویرا,"['سویرہ', 'ثویرا', 'صویرا']",https://docs.google.com/uc?export=download&id=1v9KXa_fSCOB_nRcH5FC5yV-lEdFAOA1R
+audio_word,3,مرگٹھ,"['مرگٹ', 'مرگتھ', 'مرغٹ']",https://docs.google.com/uc?export=download&id=1Xbzike_LnbAPqKVDR1Jr_xxZvJPJ0n8z
+audio_word,3,اوسان,"['اوثاں', 'عوسان', 'اوصان']",https://docs.google.com/uc?export=download&id=14p5LEsp7_EbPgq-_WnSsfobC6uuSJdEV
+audio_word,3,حصے,"['حسے', 'ہثے', 'حثے']",https://docs.google.com/uc?export=download&id=1whnx92IjwD3UZrOmsRQMeLK4swDmhsag
+audio_word,2,مصیبت,"['موسیبت', 'مسیبت', 'مثیبت', 'مصیبط']",https://docs.google.com/uc?export=download&id=1dhqdHrFKJVqQc5V9At1rHHwpvwNF14Mk
+audio_word,2,دوپہر,"['دوپھر', 'دوپحر', 'دوپر']",https://docs.google.com/uc?export=download&id=19-eKwdhAnRuNM_xEGRMWXsxjdbehV9pF
+audio_word,2,مشقت,"['مشکت', 'مشقط', 'مسقت']",https://docs.google.com/uc?export=download&id=1WsZVyVL2FM6f5gxlL8fajuXewAnj3sne
+audio_word,2,کھیلتے,"['گھیلتے', 'کھیلتے', 'کحیلتے', 'کہیلتے', 'کھیلطے']",https://docs.google.com/uc?export=download&id=1kSezcQBix_YkqAlg5czKlptuv4K59--N
+audio_word,2,صوبہ,"['صوبا', 'ثوبہ', 'سوبہ', 'صوبح']",https://docs.google.com/uc?export=download&id=1LF-aRFb2r6s5OLTzep36Tsmipwf17qPK
+audio_word,2,حادثوں,"['ہادثوں', 'حادسوں', 'ھادثوں', 'حادصوں']",https://docs.google.com/uc?export=download&id=1LZEmqPFghOe7qOvGx7T_c_fwFipkXGwa
+audio_word,1,پیتی,"['بیتی', 'پیتی', 'پیطی', 'پتی']",https://docs.google.com/uc?export=download&id=14ImNof7GlxOIfnWnWb1q-4e_Oqbyholo
+audio_word,1,بنائیں,"['بنایں', 'بائیں', 'بنائین']",https://docs.google.com/uc?export=download&id=1ElKKJpSttAiKX51TO2WJZSEIMjTBLmrB
+audio_word,1,محنتی,"['مہنتی', 'محنطی', 'محناطی']",https://docs.google.com/uc?export=download&id=1M8oVes3CleHYE99nFwa3qL4eIlaLV9yk
+audio_word,1,مصیبت,"['مصیبط', 'مسیبت', 'مثیبت']",https://docs.google.com/uc?export=download&id=1dhqdHrFKJVqQc5V9At1rHHwpvwNF14Mk
+mcq,University,سلطنت,"['سلظنت', 'سلتنت', 'سلنطت']",https://drive.google.com/thumbnail?id=1BPnC-2TFOxdP9dptenR5rHMNKLPaSIxm
+mcq,University,تصنیف,"['تصنف', 'تضنیف', 'تنصیف']",https://drive.google.com/thumbnail?id=1Mdg61Pps9dDxIp53qpZtNbW7S6Dg3V-k
+mcq,University,تانیث,"['تانیت', 'تنیث', 'تانث']",https://drive.google.com/thumbnail?id=1bIBrtk1RXrpJOwp0XvlID4-p-uxFs9u5
+mcq,college,حیوان,"['خیوان','ہیوان','حوان',]",https://drive.google.com/thumbnail?id=1QK9pmSY02_LNJROkGshWpnChyj5LCt1w
+mcq,college,مضمون,"['مصمون', 'مضمن', 'مزمون']",https://drive.google.com/thumbnail?id=1Mdg61Pps9dDxIp53qpZtNbW7S6Dg3V-k
+mcq,college,انتخاب,"['انتحاب', 'اتنخاب', 'انتخب']",https://drive.google.com/thumbnail?id=1mtdSUJ6nNURrcAP1fYf7pFM_wF02V33h
+mcq,10,ظرافت,"['طرافت', 'زرافت', 'ظراقت']",https://drive.google.com/thumbnail?id=1hGA9op7NEJHXxu6ShxsIIioNqg647AUp
+mcq,10,طبیعت,"['ظبیعت', 'تبیات', 'طبعت']",https://drive.google.com/thumbnail?id=1CGfHYb3jAi3_F_xuYLz_jy3sdvwDmCsh
+mcq,10,روانہ,"['راونہ', 'زوانہ', 'رونہ']",https://drive.google.com/thumbnail?id=10QFJe8LxAUIIqMT3ljDfUXyJIfXeARj5
+mcq,10,آرام,"['آزام', 'ارام', 'آرم']",https://drive.google.com/thumbnail?id=1P3KT0EKIwzt8aM67GqrIMAYd79RsBHX8
+mcq,9,حفاظت,"['حفاضت', 'حفاذت', 'حفازت', 'حفاظط', 'ہفاظت', 'ھفاظت']",https://drive.google.com/thumbnail?id=1zw1jKUGAl3zHhzFpdxc_is22Sm855wZM
+mcq,9,محکمہ,"['مہکمہ', 'مھکمہ', 'محقمہ', 'محکما', 'محکمح']",https://drive.google.com/thumbnail?id=1YCRjD6vZ-6i2_lcW6diKRkqnWhOGkNf9
+mcq,9,نڈھال,"['نڈحال', 'نڈہال', 'نڈھل', 'نڑھال']",https://drive.google.com/thumbnail?id=1sCb5tJlsF1_ve5YskEp9uQulUhbbQUdH
+mcq,9,پہنچا,"['پھنچا', 'پحنچا', 'پوہنچا', 'پہنچہ', 'پہنجا']",https://drive.google.com/thumbnail?id=1a2rnghbJ9vr36TTDMPj3XTeK1HuH8B9q
+mcq,8,سویرا,"['صویرا', 'سویرہ', 'صویرہ']",https://drive.google.com/thumbnail?id=1v68v_BQ9fwwo2wpHnqNfbT6nPespbcGy
+mcq,8,گہوارہ,"['گھوارہ', 'گہوارا', 'کہوارہ', 'گہارہ']",https://drive.google.com/thumbnail?id=1QHt33jRSJ2VKO7U0MSCkeH0Bph6olSDq
+mcq,8,ہفتہ,"['حفتہ', 'ھفتہ', 'ہفتا', 'ہفتاہ', 'ہفطہ']",https://drive.google.com/thumbnail?id=1vMW0RtS5AWu23W2UZmTNGrYt4tQxSVDc
+mcq,8,تعلیم,"['تلیم', 'طعلیم', 'تالیم']",https://drive.google.com/thumbnail?id=1fin4tKN5OMWv7NX-uM5tXR2IK7SmuGJA
+mcq,7,اعزاز,"['ایزاز', 'اعضاض', 'اغزاز']",https://drive.google.com/thumbnail?id=1LwWgx8UONAGwm_jqR5n2MXI8ajXFs2Pz
+mcq,7,پودے,"['بودے', 'پوذے', 'بوذے']",https://drive.google.com/thumbnail?id=1Dw8paIND2fXMrmC4YLYqTv2yCBvZnOPX
+mcq,7,دھویں,"['دویں', 'دوین', 'ذھویں']",https://drive.google.com/thumbnail?id=1wdngtoZD9JNTJgFRTruJ6rAqD-vYqSjC
+mcq,6,فضاءیں,"['فضایں','فضاین','فصاین']",https://drive.google.com/thumbnail?id=1nxuJnr4pgKafxXQhi0fII_ewntkHyDvY
+mcq,6,دیگچی,"['دگچی','دیگجی','دیکچی']",https://drive.google.com/thumbnail?id=1EonWsZd9Fc_558Cs06Jh1v_xN8wQkdL_
+mcq,6,اسکول,"['صکول', 'ثکول', 'اثکول']",https://drive.google.com/thumbnail?id=1e-0Rc-R1YNi8P7aku1yugN3QFMf6iqpI
+mcq,5,لوگ,"['لوک','لوغ','لوق']",https://drive.google.com/thumbnail?id=1RRzmhvaXN3kFVdv1noGthrTCJOHKid-x
+mcq,5,بھاگ,"['باگ','بھاک','بہاگ']",https://drive.google.com/file/d/1OBYSrF9f5J2kmAcffnOKjnoWUmHXqRSU/view?usp=sharing
+mcq,5,سمان,"['سامان', 'ثامان', 'صامان', 'صمان', 'ثمان']",https://drive.google.com/thumbnail?id=1rIWHv5h_2woaNhVn9xClfPF8bzCa1mmN
+mcq,4,چمک,"['چمق','چقم','چکم']",https://drive.google.com/thumbnail?id=1Ymde0mOQwu_HLo1vRUFz4MBJsw6aR26m
+mcq,4,پکایا,"['پاکایا', 'پاقایا', 'پقایا']",https://drive.google.com/thumbnail?id=1V5Sf4ZDgpnT47O0JE5LOwRJJQKb3BdTA
+mcq,4,آدھی,"['ادھی', 'ادہی', 'احہی', 'آحہی', 'آدہی']",https://drive.google.com/thumbnail?id=1YnPVXMs63AoIj4Fkq6izSCevfgRHGzY3
+mcq,3,ساتھی,"['ساتی', 'ثاتی', 'صاتی', 'ثاتھی', 'صاتھی', 'ساتہی', 'ساتحی', 'صاتحی', 'صاتہی', 'ثاتہی', 'ثاتحی']",https://drive.google.com/thumbnail?id=1pui6iUy2QbrZQpIE5cVBSoOtzUSmH_xn
+mcq,3,قُدرت,"['کدرت','کردت','قُردت']",https://drive.google.com/thumbnail?id=1ZH-VFETKRZ2BgO62lCyyiXQoxzSm0S4r/
+mcq,3,انگلیاں,"['آگیلاں', 'اگلیاں', 'انلیاں']",https://drive.google.com/thumbnail?id=1DldlBUz9xNBdAGo2YfZ4TBxgGw2GwmeE
+mcq,2,کھلاۓ,"['کلاۓ','کہلاۓ','کحلاۓ','کلھاۓ','کلہاۓ']",https://drive.google.com/thumbnail?id=1LoHV3P1WxWXQq6Y9su9JE6jNTnJkH33F
+mcq,2,پکڑ,"['پکر','پرک','پڑک']",https://drive.google.com/thumbnail?id=1OgiopTODyNbQ3uFt7yAYHTvB-XX9zO4F
+mcq,2,سلطان,"['ثلطان', 'سلتان', 'سلطاں']",https://drive.google.com/thumbnail?id=17Ho-xbpgqKobuISsR09v1bcHW9WHL7tu
+mcq,1,کرسی,"['قرسی','کرصی','کرشی']",https://drive.google.com/thumbnail?id=1oiTZTGsnA_oq8rGsU-jwSVEbrWgGwNvg
+mcq,1,آسمان,"['اسمان', 'آسماں', 'اسان', 'اسان']",https://drive.google.com/thumbnail?id=1gUc2EsYbu0apfFZNcdAFK2fRY9JMN0PD
+mcq,1,کھیت,"['گھیت', 'کحیت', 'کھیط']",https://drive.google.com/thumbnail?id=1eP7gOJ5HlYrIKAV1wr9Wo0yOFmyP9r_6
+type,University,آلودگی,"['الودگی', 'الودکی', 'آلودکی']",https://drive.google.com/thumbnail?id=1mzj23coWfY0SlmC_Vj3f8S_zSk_EAOxf/
+type,University,چراغ,"['چرآغ', 'چرغ', 'چرغا']",https://drive.google.com/thumbnail?id=1Imr4ICGdk7DDiLFu0BCFSrBYmbUIfpE3
+type,University,پھاٹک,"['پھاٹق', 'پھاٹگ', 'پہاٹک', 'پحاٹک']",https://drive.google.com/thumbnail?id=1WT1t-i_1QtbzllgcRgOnEq-uz__Rpk9_
+type,college,مستطیل,"['متسطیل', 'مستظیل', 'مستطل']",https://drive.google.com/thumbnail?id=1wQFzXnjqNBrAafGi62tLoWNrnwfo9DTT
+type,college,جمعدار,"['جمغدار', 'جعمدار', 'جمادار']",https://drive.google.com/thumbnail?id=1nhgYmtJknXw1CUV6CUGPIowMg-Gp6mJ6
+type,college,قمیض,"['قمیص', 'قمیس', 'کمیض']",https://drive.google.com/thumbnail?id=1WRNZSdl8OBq6sBfVDTSm5-JDRo2TimBh
+type,10,طوفان,"['طفان','توفان','تفان']",https://drive.google.com/thumbnail?id=1G4vxpLIMP5p74R6Rqfi_NVKxzAVecmpO
+type,10,تلوار,"['نلوار','تلار','تلور']",https://drive.google.com/thumbnail?id=18IXb5ZGn_fwZ0AhYW5d3DJP8EvDgLRf5
+type,10,بکری,"['بگری','بقری','بکرا']",https://drive.google.com/file/d/1sCLF5fWDWycq_izXyfQBsNmOqJhJbxNY/view?usp=sharing
+type,9,اخبار,"['احبار','اخابار','اخار']",https://drive.google.com/thumbnail?id=1gvG4PGPLCfzUF8nwKUaFGiZpCIt_eFF4
+type,9,کتاب,"['کاب','قتاب','گتاب']",https://drive.google.com/thumbnail?id=1xiyHSX9RS2K5DVaCSbWrQp751RlCkWcj/
+type,9,حادثہ,"['ہادثہ', 'ھادثہ', 'حادسہ', 'حادصہ', 'حادثا', 'حادثح', 'حادثھ']",https://drive.google.com/thumbnail?id=1ogSFy8O8Cr4lU1b2IUyr6f4x4mDphZUI
+type,8,مچھلی,"['مچہلی','مجھلی','مچلی']",https://drive.google.com/thumbnail?id=1Jwbl7wYrPh7WoltprL3UzF7IDVKGCgNX/
+type,8,کشتیاں,"['کشتاں','کستیاں','کشتیان','قشتیاں']",https://drive.google.com/thumbnail?id=1vKhe7085TJedpCc6DeObcx7im4I0wZr5
+type,8,سندھ,"['سندہ', 'سندح', 'سیندھ', 'ثندھ', 'صندھ']",https://drive.google.com/thumbnail?id=1GrLdzuMKHkhYsMGXImSK02a89bq8YJve
+type,7,گاۓ,"['کاۓ','غاۓ','گاے']",https://drive.google.com/thumbnail?id=1XS0E63UCWp2f17dj8or6PeLOnHl6nWoh
+type,7,شخص,"['شخس', 'شحص', 'شخض']",https://drive.google.com/thumbnail?id=1CTlof9kxxy3aLCAD9xW1kyL3FOy7IXsE
+type,7,قالین,"['کالین','قلین','کالین']",https://drive.google.com/thumbnail?id=1QeOaJkEaQskAwbWQAaNDg5Ag21ks1zW2
+type,6,گھڑی,"['گھری', 'گڑی', 'گری']",https://drive.google.com/thumbnail?id=1DoUc6Xxb6hWAKkyuQfon-jMeVlkpL9Kp
+type,6,بارش,"['بارس','باش','پارش']",https://drive.google.com/thumbnail?id=1lGvP0h6fiH88tpRA5SQN-6eas7YREp0x
+type,6,جہاز,"['چہاز', 'چہار', 'چہار']",https://drive.google.com/thumbnail?id=1EFH9nwzjLF0On19zknMdYUhxA8N2xGFl
+type,5,ستارے,"['ثتارے','صتارے','سارے']",https://drive.google.com/thumbnail?id=1ig7u-Roi7gcR4YlZwEFJbD4YsKQdzp3O
+type,5,قلم,"['کلم','قل','قالم']",https://drive.google.com/thumbnail?id=1KAV_ztc4oH0uRKVAS33OHgFDRRZrdATk
+type,5,زخم,"['زحم','زکم','رخم']",https://drive.google.com/thumbnail?id=1sMRW2wYxsGUjwC5vuvR4p07NnUNhP6bJ
+type,5,لکیر,"['لیکر', 'لیقر', 'لقیر']",https://drive.google.com/thumbnail?id=1G3v5VV9gnTLPLBlKflObjCAZKKCy6wLE
+type,4,کھیر,"['کحیر','کہیر','کیر']",https://drive.google.com/thumbnail?id=1d0i58BKXNzFvVRju_CtUP4hoHZqpsjzJ
+type,4,چوہا,"['چوا','چوحا','چوھا']",https://drive.google.com/thumbnail?id=1WscG9G86Cb5TEVgDpXHIVA-gRF3F5MA2
+type,4,پھول,"['پحول','پہول','پول']",https://drive.google.com/thumbnail?id=1nV4AOxBfo5keyzSEzh8kAhPPfkCAq3LY
+type,3,پہاڑ ,"['پھاڑ','پھار','پحاڑ']",https://drive.google.com/thumbnail?id=1dnIpAQQOR3A2cvrUKi0_sMq8RN-ukUv-
+type,3,پتھر,"['پتہر','پتحر','پتر']",https://drive.google.com/thumbnail?id=1ymoeoxB0W9knRZs0GCOP1gEDsybzEtIi
+type,3,مسکرا,"['مسخار', 'مسکار', 'مثکار']",https://drive.google.com/thumbnail?id=1d2MsRtxWkgxwJO_B8D7-9gTXvX66QUvJ
+type,2,سرخ,"['ثرخ','صرخ','سرک']",https://drive.google.com/thumbnail?id=1SzTre0c7kmicYuF3Tr1BJ57_1lMYKfKk
+type,2,سبز,"['صبز', 'ثبز', 'سبر']",https://drive.google.com/thumbnail?id=1FCI_TvhtfHV9CPQ6CZyvptRCxOGPXaX0
+type,2,مسجد,"['مصجد ', 'مثجد ', 'مسحد ']",https://drive.google.com/thumbnail?id=1b2Ph-Yxzww3ipB6_AC3bB0WdMe3zvfYk
+type,1,تکیہ,"['تقیہ ', 'طکیہ ', 'تگیہ ', 'تکیھ ', 'تکیح ']",https://drive.google.com/thumbnail?id=1uda-ZA2aHb1597IwkSKuW6NBM2Ux0Q6C
+type,1,کهڑکی,"['گھڑکی', 'گھڑگی', 'کہڑکی', 'گہڑگی', 'کڑکی']",https://drive.google.com/thumbnail?id=1nxHFmr_ExnRP0EaUrRUbWbtIW2DeznfK
+type,1,پنکھا,"['پنگھا', 'پنکہا', 'پنکحا', 'پنکا']",https://drive.google.com/thumbnail?id=1_YwcaHEJAETQYM-KP6gQxrVSLMFfMobR
+type,1,بستہ,"['بستح', 'بستھ', 'بثتہ', 'بصتہ']",https://drive.google.com/thumbnail?id=1Nj2nuaNa-3GYLoXn7xa-ldSKHpi8kxz6
