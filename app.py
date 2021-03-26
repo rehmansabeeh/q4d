@@ -1000,7 +1000,7 @@ def q5_quiz():
         # correct_answers =
         score = 0
         mcqs_answers = request.get_json(force=True)
-        # print("Answers: " , mcqs_answers)
+        print("Answers: " , mcqs_answers)  
         # # for element in range(len(mcqs_answers['selected'])):
         #     if mcqs_answers['selected'][element] == mcqs_answers['correct_answers'][element]:
         #         score += 1
@@ -1017,15 +1017,87 @@ def q5_quiz():
         return res
 
     else:
-        # users = mongo.db.name_age_gender
-        # user_id = request.args.get('id')
-        # # print("a ", username )
-        # user_id = ObjectId(user_id)
-        # user_data = users.find_one({'_id':user_id})
-        # data = questions.find({'q_level': user_data['grade_selected_user']})
-        # questions_to_send = list(data)
-        # print("Data: " , questions_to_send)
-        return render_template("screen6.html")
+        users = mongo.db.name_age_gender
+        user_id = request.args.get('id')
+        user_id = ObjectId(user_id)
+        user_data = users.find_one({'_id': user_id})
+        print("User grade", user_data['grade_selected_user'])
+        
+        
+        to_check=''
+        if user_data['grade_selected_user']=="":
+            to_check=str(user_data['selected_education_user'])
+        else:
+            to_check=str(user_data['grade_selected_user'])
+        data_all=[]
+        data={}
+        data2={}
+        data3={}
+        # value.isdigit()
+        print(user_data['grade_selected_user'])
+        if to_check.isdigit():
+            if int(to_check) <=8:
+                data = list(questions.find(
+                    {'q_level': str(to_check), 'question_type': 'audio_audio'}))
+                data2= list(questions.find(
+                    {'q_level': str(int(to_check)+1), 'question_type': 'audio_audio'}))
+                data3 = list(questions.find(
+                    {'q_level': str(int(to_check)+2), 'question_type': 'audio_audio'}))
+                data_all.append(data)
+                data_all.append(data2)
+                data_all.append(data3)
+            elif int(to_check) ==9:
+                data = list(questions.find(
+                    {'q_level': str(int(to_check)), 'question_type': 'audio_audio'}))
+                data2= list(questions.find(
+                    {'q_level': str(int(to_check)+1), 'question_type': 'audio_audio'}))
+                data3 = list(questions.find(
+                    {'q_level': "college", 'question_type': 'audio_audio'}))
+                data_all.append(data)
+                data_all.append(data2)
+                data_all.append(data3)
+        if len(to_check)>=2:
+            data = list(questions.find(
+                {'q_level': '10', 'question_type': 'audio_audio'}))
+            data2= list(questions.find(
+                {'q_level': "college", 'question_type': 'audio_audio'}))
+            data3 = list(questions.find(
+                {'q_level': "University", 'question_type': 'audio_audio'}))
+            data_all.append(data)
+            data_all.append(data2)
+            data_all.append(data3)
+
+        
+        x_all=[]
+        for i in data_all:
+            # print(len(i))
+            x = random.sample(range(len(i)), 3)
+            # print(x)
+            x_all.append(x)
+        
+        questions_to_send = []
+        for index in range(len(data_all)):
+            for i in x_all[index] : #add index to x[index]
+                temp = {'actual_word': "", 'recording': data_all[index][i]['data'], 'option_1': "", 
+                'option_2': "", 'option_3': "", 'option_4': ""}
+                options_to_be_selected = []
+
+                index_of_options = random.sample(range(len(data_all[index][i]['options'])), 3)
+                for index2 in index_of_options:
+                    options_to_be_selected.append(data_all[index][i]['options'][index2])
+
+                options_to_be_selected.append(data_all[index][i]['data'])
+                
+                random.shuffle(options_to_be_selected)
+                temp['actual_word'] = data_all[index][i]['actual_word']
+                print(temp['actual_word'])
+                temp['option_1'] = options_to_be_selected[0]
+                temp['option_2'] = options_to_be_selected[1]
+                temp['option_3'] = options_to_be_selected[2]
+                temp['option_4'] = options_to_be_selected[3]
+                data_of_one_question = temp
+                questions_to_send.append(data_of_one_question)
+        return render_template("screen6.html",data=questions_to_send)
 
 
 @app.route('/q6_quiz', methods=['POST', 'GET'])
