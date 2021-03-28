@@ -66,25 +66,19 @@ function move() {
         }
       }
     });
+var selected_option_1;
+var selected_option_2;
+var selected_option_3;
 
-$("#myBtn").click(function(){
-    var str = $("#myInput").val();
-    alert(str);
-});
-// var selected_option_1;
-// var selected_option_2;
-// var selected_option_3;
-
-// $('.box-first').click(function(){
-//   selected_option_1 = $('.caption_text_1').html()
-// })
-// $('.box-second').click(function(){
-//   selected_option_2 = $('.caption_text_2').html()
-// })
-// $('.box-third').click(function(){
-//   selected_option_3= $('.caption_text_3').html()
-// })
-
+$('.box-first').click(function(){
+  selected_option_1 = $('.caption_text_1').html()
+})
+$('.box-second').click(function(){
+  selected_option_2 = $('.caption_text_2').html()
+})
+$('.box-third').click(function(){
+  selected_option_3= $('.caption_text_3').html()
+})
 var urlParams = new URLSearchParams(window.location.search);
 var myParam = urlParams.get('id');
 console.log(myParam)
@@ -99,25 +93,12 @@ $('.no_exit_confirmation_button').click(function(){
       $(".exit_button_popup").fadeOut("slow");
 })
 $('.next_button').click(function() {
-
-  var entered_text = $("#entered_essay_text").val();
-  var attached_picture = $("#myFile").val();
-  // var form_data = new FormData();
-  // form_data.append('file', $('#myFile').prop('files')[0]);
-  // var form = $('#file_upload')[0]
-  // var fd = new FormData(form)
-  // console.log(fd)
-  // console.log(attached_picture)
-  // var conceptName = $('.dob_element').find(":selected").text();
-
-fetch(`${window.origin}/q7_quiz`,{
+  
+fetch(`${window.origin}/ending_info_start`,{
     method : 'POST',
     credentials : "include",
     body : JSON.stringify({
-    query_variable_in_url : myParam,
-    entered_text_user: entered_text,
-    attached_picture_user: attached_picture,
-    // fileUser: fd
+      query_variable_in_url : myParam
     }),
     cache : 'no-cache'
   }).then(function(response){
@@ -127,7 +108,7 @@ fetch(`${window.origin}/q7_quiz`,{
       console.log("OKAY!")
       response.json().then(function(data_received){
         window.location.href = `${window.origin}/register_1` + '?id=' + myParam;
-    })
+      })
 
     }
   }

@@ -65,8 +65,9 @@ function move() {
           }
           return false;
         }
-      }
-    });
+    }
+});
+
 // // Get the modal
 //   var modal = document.getElementById("myModal");
   
@@ -95,7 +96,6 @@ function move() {
 
 console.log("HELL2O")
 
-
 var selected_option_1;
 var selected_option_2;
 var selected_option_3;
@@ -106,15 +106,37 @@ var selected_option_7;
 var selected_option_8;
 var selected_option_9;
 
+
 $('.box-first').click(function(){
-  selected_option_1 = $('.selected-first textt').html()
+  // $(this).attr('src');
+  // $('video').find('Source:first').attr('src'); 
+  selected_option_1 = $('.selected-first audio').find('Source:first').attr('src'); 
 })
 $('.box-second').click(function(){
-  selected_option_2 = $('.selected-second textt').html()
+  selected_option_2 = $('.selected-second audio').find('Source:first').attr('src'); 
 })
 $('.box-third').click(function(){
-  selected_option_3 = $('.selected-third textt').html()
+  selected_option_3 = $('.selected-third audio').find('Source:first').attr('src'); 
 })
+$('.box-fourth').click(function(){
+  selected_option_4 = $('.selected-fourth audio').find('Source:first').attr('src'); 
+})
+$('.box-fifth').click(function(){
+  selected_option_5 = $('.selected-fifth audio').find('Source:first').attr('src'); 
+})
+$('.box-sixth').click(function(){
+  selected_option_6 = $('.selected-sixth audio').find('Source:first').attr('src'); 
+})
+$('.box-seventh').click(function(){
+  selected_option_7 = $('.selected-seventh audio').find('Source:first').attr('src'); 
+})
+$('.box-eighth').click(function(){
+  selected_option_8 = $('.selected-eighth audio').find('Source:first').attr('src'); 
+})
+$('.box-ninth').click(function(){
+  selected_option_9 = $('.selected-ninth audio').find('Source:first').attr('src'); 
+})
+
 
 var correct_option_1 = $('.test_div1').html()
 var correct_option_2 = $('.test_div2').html()
@@ -141,6 +163,7 @@ $('.no_exit_confirmation_button').click(function(){
       $(".main").fadeTo(1000, 1);
       $(".exit_button_popup").fadeOut("slow");
 })
+
 
 $('.next_button').click(function() {
   

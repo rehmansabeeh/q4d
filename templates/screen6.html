@@ -14,6 +14,7 @@
 	<a href = "{{url_for('redirecttohomepage')}}"><button class = "yes_exit_confirmation_button">Yes</button></a>
 	<button class = "no_exit_confirmation_button">No</button>
 </div>
+
 <div class="main">
 	<div class="container-left">
 		<div class="icon-question">
@@ -23,6 +24,17 @@
 			<img src="../static/images//test7-logo.png"  width=90% height=90% />
 		</div>
 	</div>
+
+	<div class = "test_div1">{{data[0].recording}}</div>
+	<div class = "test_div2">{{data[1].recording}}</div>
+	<div class = "test_div3">{{data[2].recording}}</div>
+	<div class = "test_div4">{{data[3].recording}}</div>
+	<div class = "test_div5">{{data[4].recording}}</div>
+	<div class = "test_div6">{{data[5].recording}}</div>
+	<div class = "test_div7">{{data[6].recording}}</div>
+	<div class = "test_div8">{{data[7].recording}}</div>
+	<div class = "test_div9">{{data[8].recording}}</div>
+
 
 	<div class="container-right">
 		<div class="sub-top">
@@ -50,9 +62,7 @@
 				</div>
 				<div class="sub-right">
 					<div class="box-first" id = "first_set_id_1">
-                        <div class="textt">
-							A
-						</div>
+                        <div class="textt">A</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						 <audio controls>
 							<source src="{{data[0].option_1}}" type="audio/mpeg">
@@ -60,9 +70,7 @@
 						  </audio>
 					</div>
 					<div class="box-first" id = "first_set_id_2">
-                        <div class="textt">
-							B
-						</div>
+                        <div class="textt">B</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						 <audio controls>
 							<source src="{{data[0].option_2}}" type="audio/mpeg">
@@ -70,9 +78,7 @@
 						  </audio>
 					</div>
 					<div class="box-first" id = "first_set_id_3">
-                        <div class="textt">
-							C
-						</div>
+                        <div class="textt">C</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						 <audio controls>
 							<source src="{{data[0].option_3}}" type="audio/mpeg">
@@ -80,9 +86,7 @@
 						  </audio>
 					</div>
 					<div class="box-first" id = "first_set_id_4">
-                        <div class="textt">
-							D
-						</div>
+                        <div class="textt">D</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						 <audio controls>
 							<source src="{{data[0].option_4}}" type="audio/mpeg">
@@ -108,9 +112,7 @@
 				</div>
 				<div class="sub-right">
 					<div class="box-second" id = "second_set_id_1">
-                        <div class="textt">
-							A
-						</div>
+                        <div class="textt">A</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						 <audio controls>
 							<source src="{{data[1].option_1}}" type="audio/mpeg">
@@ -118,9 +120,7 @@
 						  </audio>
 					</div>
 					<div class="box-second" id = "second_set_id_2">
-                        <div class="textt">
-							B
-						</div>
+                        <div class="textt">B</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[1].option_2}}"  type="audio/mpeg">
@@ -128,9 +128,7 @@
 						</audio>
 					</div>
 					<div class="box-second" id = "second_set_id_3">
-                        <div class="textt">
-							C
-						</div>
+                        <div class="textt">C</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[1].option_3}}" type="audio/mpeg">
@@ -138,9 +136,7 @@
 						</audio>
 					</div>
 					<div class="box-second" id = "second_set_id_4">
-                        <div class="textt">
-							D
-						</div>
+                        <div class="textt">D</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[1].option_4}}" type="audio/mpeg">
@@ -166,9 +162,7 @@
 				</div>
 				<div class="sub-right">
 					<div class="box-third" id = "third_set_id_1">
-                        <div class="textt">
-							A
-						</div>
+                        <div class="textt">A</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						 <audio controls>
 							<source src="{{data[2].option_1}}" type="audio/mpeg">
@@ -176,9 +170,7 @@
 						  </audio>
 					</div>
 					<div class="box-third" id = "third_set_id_2">
-                        <div class="textt">
-							B
-						</div>
+                        <div class="textt">B</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[2].option_2}}"  type="audio/mpeg">
@@ -186,9 +178,7 @@
 						</audio>
 					</div>
 					<div class="box-third" id = "third_set_id_3">
-                        <div class="textt">
-							C
-						</div>
+                        <div class="textt">C</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[2].option_3}}"type="audio/mpeg">
@@ -196,9 +186,7 @@
 						</audio>
 					</div>
 					<div class="box-third" id = "third_set_id_4">
-                        <div class="textt">
-							D
-						</div>
+                        <div class="textt">D</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[2].option_4}}"type="audio/mpeg">
@@ -224,9 +212,7 @@
 				</div>
 				<div class="sub-right">
 					<div class="box-fourth" id = "fourth_set_id_1">
-                        <div class="textt">
-							A
-						</div>
+                        <div class="textt">A</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						 <audio controls>
 							<source src="{{data[3].option_1}}" type="audio/mpeg">
@@ -234,9 +220,7 @@
 						  </audio>
 					</div>
 					<div class="box-fourth" id = "fourth_set_id_2">
-                        <div class="textt">
-							B
-						</div>
+                        <div class="textt">B</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[3].option_2}}" type="audio/mpeg">
@@ -244,9 +228,7 @@
 						</audio>
 					</div>
 					<div class="box-fourth" id = "fourth_set_id_3">
-                        <div class="textt">
-							C
-						</div>
+                        <div class="textt">C</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[3].option_3}}" type="audio/mpeg">
@@ -254,9 +236,7 @@
 						</audio>
 					</div>
 					<div class="box-fourth" id = "fourth_set_id_4">
-                        <div class="textt">
-							D
-						</div>
+                        <div class="textt">D</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[3].option_4}}" type="audio/mpeg">
@@ -282,9 +262,7 @@
 				</div>
 				<div class="sub-right">
 					<div class="box-fifth" id = "fifth_set_id_1">
-                        <div class="textt">
-							A
-						</div>
+                        <div class="textt">A</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						 <audio controls>
 							<source src="{{data[4].option_1}}" type="audio/mpeg">
@@ -292,9 +270,7 @@
 						  </audio>
 					</div>
 					<div class="box-fifth" id = "fifth_set_id_2">
-                        <div class="textt">
-							B
-						</div>
+                        <div class="textt">B</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[4].option_2}}" type="audio/mpeg">
@@ -302,9 +278,7 @@
 						</audio>
 					</div>
 					<div class="box-fifth" id = "fifth_set_id_3">
-                        <div class="textt">
-							C
-						</div>
+                        <div class="textt">C</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[4].option_3}}" type="audio/mpeg">
@@ -312,9 +286,7 @@
 						</audio>
 					</div>
 					<div class="box-fifth" id = "fifth_set_id_4">
-                        <div class="textt">
-							D
-						</div>
+                        <div class="textt">D</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[4].option_4}}" type="audio/mpeg">
@@ -340,9 +312,7 @@
 				</div>
 				<div class="sub-right">
 					<div class="box-sixth" id = "sixth_set_id_1">
-                        <div class="textt">
-							A
-						</div>
+                        <div class="textt">A</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						 <audio controls>
 							<source src="{{data[5].option_1}}" type="audio/mpeg">
@@ -350,9 +320,7 @@
 						  </audio>
 					</div>
 					<div class="box-sixth" id = "sixth_set_id_2">
-                        <div class="textt">
-							B
-						</div>
+                        <div class="textt">B</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[5].option_2}}" type="audio/mpeg">
@@ -360,9 +328,7 @@
 						</audio>
 					</div>
 					<div class="box-sixth" id = "sixth_set_id_3">
-                        <div class="textt">
-							C
-						</div>
+                        <div class="textt">C</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[5].option_3}}" type="audio/mpeg">
@@ -370,9 +336,7 @@
 						</audio>
 					</div>
 					<div class="box-sixth" id = "sixth_set_id_4">
-                        <div class="textt">
-							D
-						</div>
+                        <div class="textt">D</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[5].option_4}}" type="audio/mpeg">
@@ -398,9 +362,7 @@
 				</div>
 				<div class="sub-right">
 					<div class="box-seventh" id = "seventh_set_id_1">
-                        <div class="textt">
-							A
-						</div>
+                        <div class="textt">A</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						 <audio controls>
 							<source src="{{data[6].option_1}}" type="audio/mpeg">
@@ -408,9 +370,7 @@
 						  </audio>
 					</div>
 					<div class="box-seventh" id = "seventh_set_id_2">
-                        <div class="textt">
-							B
-						</div>
+                        <div class="textt">B</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[6].option_2}}"  type="audio/mpeg">
@@ -418,9 +378,7 @@
 						</audio>
 					</div>
 					<div class="box-seventh" id = "seventh_set_id_3">
-                        <div class="textt">
-							C
-						</div>
+                        <div class="textt">C</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[6].option_3}}"  type="audio/mpeg">
@@ -428,9 +386,7 @@
 						</audio>
 					</div>
 					<div class="box-seventh" id = "seventh_set_id_4">
-                        <div class="textt">
-							D
-						</div>
+						<div class="textt">D</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[6].option_4}}"  type="audio/mpeg">
@@ -456,9 +412,7 @@
 				</div>
 				<div class="sub-right">
 					<div class="box-eighth" id = "eighth_set_id_1">
-                        <div class="textt">
-							A
-						</div>
+                        <div class="textt">A</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						 <audio controls>
 							<source src="{{data[7].option_1}}" type="audio/mpeg">
@@ -466,9 +420,7 @@
 						  </audio>
 					</div>
 					<div class="box-eighth" id = "eighth_set_id_2">
-                        <div class="textt">
-							B
-						</div>
+                        <div class="textt">B</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[7].option_2}}" type="audio/mpeg">
@@ -476,9 +428,7 @@
 						</audio>
 					</div>
 					<div class="box-eighth" id = "eighth_set_id_3">
-                        <div class="textt">
-							C
-						</div>
+                       	<div class="textt">C</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[7].option_3}}" type="audio/mpeg">
@@ -486,9 +436,7 @@
 						</audio>
 					</div>
 					<div  class="box-eighth" id = "eighth_set_id_4">
-                        <div class="textt">
-							D
-						</div>
+                        <div class="textt">D</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[7].option_4}}" type="audio/mpeg">
@@ -514,9 +462,7 @@
 				</div>
 				<div class="sub-right">
 					<div class="box-ninth" id = "ninth_set_id_1">
-                        <div class="textt">
-							A
-						</div>
+                        <div class="textt">A</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						 <audio controls>
 							<source src="{{data[8].option_1}}" type="audio/mpeg">
@@ -524,9 +470,7 @@
 						  </audio>
 					</div>
 					<div class="box-ninth" id = "ninth_set_id_2">
-                        <div class="textt">
-							B
-						</div>
+                        <div class="textt">B</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[8].option_2}}" type="audio/mpeg">
@@ -534,9 +478,7 @@
 						</audio>
 					</div>
 					<div class="box-ninth" id = "ninth_set_id_3">
-                        <div class="textt">
-							C
-						</div>
+                        <div class="textt">C</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[8].option_3}}" type="audio/mpeg">
@@ -544,9 +486,7 @@
 						</audio>
 					</div>
 					<div  class="box-ninth" id = "ninth_set_id_4">
-                        <div class="textt">
-							D
-						</div>
+                        <div class="textt">D</div>
 						 <!-- <img src="./images/answer_option.png"/> -->
 						<audio controls>
 							<source src="{{data[8].option_4}}" type="audio/mpeg">
@@ -569,3 +509,4 @@
 <script src="../static/js/screen6JS.js"></script>
 </body>
 </html>
+

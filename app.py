@@ -993,24 +993,37 @@ def q4_quiz():
 
 @app.route('/q5_quiz', methods=['POST', 'GET'])
 def q5_quiz():
-    print("Q4 QUIZ", request.method)
+    print("Q5 QUIZ", request.method)
     questions = mongo.db.Questions
     if request.method == 'POST':
-        # <========Need to find correct answers here============>
-        # correct_answers =
+        
         score = 0
+        attempted_questions=0
         mcqs_answers = request.get_json(force=True)
-        print("Answers: " , mcqs_answers)  
-        # # for element in range(len(mcqs_answers['selected'])):
-        #     if mcqs_answers['selected'][element] == mcqs_answers['correct_answers'][element]:
-        #         score += 1
+            
+        
+        for element in range(len(mcqs_answers['selected'])):
+            if mcqs_answers['selected'][element]!= None:
+                attempted_questions+=1
+                print(mcqs_answers['selected'][element].split('id=')[1] ," ",mcqs_answers['correct_answers'][element].split('id=')[1])
+                if mcqs_answers['selected'][element].split('id=')[1] == mcqs_answers['correct_answers'][element].split('id=')[1]:
+                    score += 1
+
+        print(score)
+        print(attempted_questions)
         user_id = mcqs_answers['query_variable_in_url']
-        # print("USERNAMEEEEE2 ", username )
         user_id = ObjectId(user_id)
-        # add_score = mongo.db.Scores
-        # add_score.insert_one(
-        #         {'user_id' : user_id, "quiz_type": "audio_word" , "score" : score }
-        #         )
+        add_score = mongo.db.Scores
+
+        user_scores = add_score.find_one({'user_id': user_id})
+        new_score= score+ user_scores['score']
+        new_attempted_questions= attempted_questions + user_scores['attempted_questions']
+        
+        add_score.find_and_modify(
+            {"user_id": user_id},
+            {'user_id': user_id, 'score': new_score, 'attempted_questions': new_attempted_questions})
+        
+    
         user_id = str(user_id)
         res = make_response(
             jsonify({'message': "successful", "id_to_be_passed": user_id}))
@@ -1096,6 +1109,7 @@ def q5_quiz():
                 temp['option_3'] = options_to_be_selected[2]
                 temp['option_4'] = options_to_be_selected[3]
                 data_of_one_question = temp
+                # print(data_of_one_question)
                 questions_to_send.append(data_of_one_question)
         return render_template("screen6.html",data=questions_to_send)
 
@@ -1135,16 +1149,17 @@ def q7_quiz():
         score = 0
         mcqs_answers = request.get_json(force=True)
         print("Answers: ", mcqs_answers)
+    
         # for element in range(len(mcqs_answers['selected'])):
         #     if mcqs_answers['selected'][element] == mcqs_answers['correct_answers'][element]:
         #         score += 1
         user_id = mcqs_answers['query_variable_in_url']
         # print("USERNAMEEEEE2 ", username )
         user_id = ObjectId(user_id)
-        # add_score = mongo.db.Scores
-        # add_score.insert_one(
-        #         {'user_id' : user_id, "quiz_type": "audio_word" , "score" : score }
-        #         )
+        essay = mongo.db.Essay_Writing
+        essay.insert_one(
+                {'user_id' : user_id, "quiz_type": "essay_writing" , "data" :mcqs_answers['entered_text_user'] }
+                )
         user_id = str(user_id)
         res = make_response(
             jsonify({'message': "successful", "id_to_be_passed": user_id}))
