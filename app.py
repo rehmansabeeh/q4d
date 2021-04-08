@@ -442,10 +442,17 @@ def admin():
                 temp_list=[]
                 user_scores=scores.find({"user_id": i['_id']})
                 user_scores=list(user_scores)
+                print(user_scores)
                 if user_scores ==[]:
                     continue
-                print(user_scores[0]['attempted_questions'])
-                temp_list=[i['name'], user_scores[0]['attempted_questions'], user_scores[0]['score']]
+                total_score=0
+                total_attempted=0
+                for q in user_scores:
+                    total_score+=q['score']
+                    total_attempted=q['attempted_questions']
+
+                print(total_score,total_attempted)
+                temp_list=[i['name'], total_attempted, total_score]
                 data_to_send.append(temp_list)
             res = make_response(
             jsonify({'message': "successful", "list_passed": data_to_send}))
@@ -458,8 +465,13 @@ def admin():
                 user_scores=list(user_scores)
                 if user_scores ==[]:
                     continue
-                print(user_scores[0]['attempted_questions'])
-                temp_list=[i['name'], user_scores[0]['attempted_questions'], user_scores[0]['score']]
+                total_score=0
+                total_attempted=0
+                for q in user_scores:
+                    total_score+=q['score']
+                    total_attempted=q['attempted_questions']
+                print(total_score,total_attempted)
+                temp_list=[i['name'], total_attempted, total_score]
                 data_to_send.append(temp_list)
             res = make_response(
             jsonify({'message': "successful", "list_passed": data_to_send}))
@@ -478,8 +490,14 @@ def admin():
                 user_scores=list(user_scores)
                 if user_scores ==[]:
                     continue
-                print(user_scores[0]['attempted_questions'])
-                temp_list=[i['name'], user_scores[0]['attempted_questions'], user_scores[0]['score']]
+                total_score=0
+                total_attempted=0
+                for q in user_scores:
+                    total_score+=q['score']
+                    total_attempted=q['attempted_questions']
+
+                print(total_score,total_attempted)
+                temp_list=[i['name'], total_attempted, total_score]
                 data_to_send.append(temp_list)
             res = make_response(
             jsonify({'message': "successful", "list_passed": data_to_send}))
@@ -497,8 +515,14 @@ def admin():
                 user_scores=list(user_scores)
                 if user_scores ==[]:
                     continue
-                print(user_scores[0]['attempted_questions'])
-                temp_list=[i['name'], user_scores[0]['attempted_questions'], user_scores[0]['score']]
+                total_score=0
+                total_attempted=0
+                for q in user_scores:
+                    total_score+=q['score']
+                    total_attempted=q['attempted_questions']
+
+                print(total_score,total_attempted)
+                temp_list=[i['name'], total_attempted, total_score]
                 data_to_send.append(temp_list)
             res = make_response(
             jsonify({'message': "successful", "list_passed": data_to_send}))
@@ -539,7 +563,7 @@ def q1_quiz():
         user_id = ObjectId(user_id)
         add_score = mongo.db.Scores
         add_score.insert_one(
-            {'user_id': user_id, "score": score, "attempted_questions": attempted_questions }
+            {'user_id': user_id, "score": score, "attempted_questions": attempted_questions , "question_type": "quiz_1"}
         )
         user_id = str(user_id)
         res = make_response(
@@ -666,15 +690,13 @@ def q2_quiz():
         user_id = ObjectId(user_id)
         add_score = mongo.db.Scores
 
-        user_scores = add_score.find_one({'user_id': user_id})
-        new_score= score+ user_scores['score']
-        new_attempted_questions= attempted_questions + user_scores['attempted_questions']
+        # user_scores = add_score.find_one({'user_id': user_id})
+        # new_score= score+ user_scores['score']
+        # new_attempted_questions= attempted_questions + user_scores['attempted_questions']
         
-        add_score.find_and_modify(
-            {"user_id": user_id},
-            {'user_id': user_id, 'score': new_score, 'attempted_questions': new_attempted_questions}
+        add_score.insert_one(
+            {'user_id': user_id, "score": score, "attempted_questions": attempted_questions , "question_type": "quiz_2"}
         )
-
         user_id = str(user_id)
         res = make_response(
             jsonify({'message': "successful", "id_to_be_passed": user_id}))
@@ -779,9 +801,8 @@ def q3_quiz():
         new_score= score+ user_scores['score']
         new_attempted_questions= attempted_questions + user_scores['attempted_questions']
         
-        add_score.find_and_modify(
-            {"user_id": user_id},
-            {'user_id': user_id, 'score': new_score, 'attempted_questions': new_attempted_questions}
+        add_score.insert_one(
+            {'user_id': user_id, "score": score, "attempted_questions": attempted_questions , "question_type": "quiz_3"}
         )
 
         user_id = str(user_id)
@@ -911,9 +932,8 @@ def q4_quiz():
         new_score= score+ user_scores['score']
         new_attempted_questions= attempted_questions + user_scores['attempted_questions']
         
-        add_score.find_and_modify(
-            {"user_id": user_id},
-            {'user_id': user_id, 'score': new_score, 'attempted_questions': new_attempted_questions}
+        add_score.insert_one(
+            {'user_id': user_id, "score": score, "attempted_questions": attempted_questions , "question_type": "quiz_4"}
         )
 
         user_id = str(user_id)
@@ -1019,9 +1039,9 @@ def q5_quiz():
         new_score= score+ user_scores['score']
         new_attempted_questions= attempted_questions + user_scores['attempted_questions']
         
-        add_score.find_and_modify(
-            {"user_id": user_id},
-            {'user_id': user_id, 'score': new_score, 'attempted_questions': new_attempted_questions})
+        add_score.insert_one(
+            {'user_id': user_id, "score": score, "attempted_questions": attempted_questions , "question_type": "quiz_5"}
+        )
         
     
         user_id = str(user_id)
