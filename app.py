@@ -680,11 +680,10 @@ def q2_quiz():
             data = list(questions.find({'actual_word': mcqs_answers['correct_answers'][element], 'question_type': 'type'}))[0]
             print(data)
             if mcqs_answers['entered'][element] not in data['options'] and mcqs_answers['entered'][element] !='' :
-                data['options'].append(mcqs_answers['entered'])
-            
-            questions.find_and_modify({"_id": data['_id']},
-            {'question_type': data['question_type'], 'q_level': data['q_level'], 'actual_word': data['actual_word'],
-                'options': data['options'], 'data': data['data']})
+                data['options'].append(mcqs_answers['entered'][element])
+                questions.find_and_modify({"_id": data['_id']},
+                {'question_type': data['question_type'], 'q_level': data['q_level'], 'actual_word': data['actual_word'],
+                    'options': data['options'], 'data': data['data']})
 
         user_id = mcqs_answers['query_variable_in_url']
         user_id = ObjectId(user_id)
@@ -907,7 +906,6 @@ def q4_quiz():
         attempted_questions=0
         mcqs_answers = request.get_json(force=True)
         print("Answers: ", mcqs_answers)
-
         for answers in mcqs_answers['entered']:
             if answers!= None:
                 attempted_questions+=1
@@ -918,11 +916,10 @@ def q4_quiz():
             data = list(questions.find({'actual_word': mcqs_answers['correct_answers'][element], 'question_type': 'audio_word'}))[0]
             print(data)
             if mcqs_answers['entered'][element] not in data['options'] and mcqs_answers['entered'][element] !='' :
-                data['options'].append(mcqs_answers['entered'])
-            
-            questions.find_and_modify({"_id": data['_id']},
-            {'question_type': data['question_type'], 'q_level': data['q_level'], 'actual_word': data['actual_word'],
-                'options': data['options'], 'data': data['data']})
+                data['options'].append(mcqs_answers['entered'][element])
+                questions.find_and_modify({"_id": data['_id']},
+                {'question_type': data['question_type'], 'q_level': data['q_level'], 'actual_word': data['actual_word'],
+                    'options': data['options'], 'data': data['data']})
 
         user_id = mcqs_answers['query_variable_in_url']
         user_id = ObjectId(user_id)
