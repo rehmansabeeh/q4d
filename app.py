@@ -442,16 +442,16 @@ def admin():
                 temp_list=[]
                 user_scores=scores.find({"user_id": i['_id']})
                 user_scores=list(user_scores)
-                print(user_scores)
+                # print(user_scores)
                 if user_scores ==[]:
                     continue
                 total_score=0
                 total_attempted=0
                 for q in user_scores:
                     total_score+=q['score']
-                    total_attempted=q['attempted_questions']
+                    total_attempted+=q['attempted_questions']
 
-                print(total_score,total_attempted)
+                # print(total_score,total_attempted)
                 temp_list=[i['name'], total_attempted, total_score]
                 data_to_send.append(temp_list)
             res = make_response(
@@ -469,7 +469,7 @@ def admin():
                 total_attempted=0
                 for q in user_scores:
                     total_score+=q['score']
-                    total_attempted=q['attempted_questions']
+                    total_attempted+=q['attempted_questions']
                 print(total_score,total_attempted)
                 temp_list=[i['name'], total_attempted, total_score]
                 data_to_send.append(temp_list)
@@ -494,7 +494,7 @@ def admin():
                 total_attempted=0
                 for q in user_scores:
                     total_score+=q['score']
-                    total_attempted=q['attempted_questions']
+                    total_attempted+=q['attempted_questions']
 
                 print(total_score,total_attempted)
                 temp_list=[i['name'], total_attempted, total_score]
@@ -519,7 +519,7 @@ def admin():
                 total_attempted=0
                 for q in user_scores:
                     total_score+=q['score']
-                    total_attempted=q['attempted_questions']
+                    total_attempted+=q['attempted_questions']
 
                 print(total_score,total_attempted)
                 temp_list=[i['name'], total_attempted, total_score]
@@ -671,7 +671,7 @@ def q2_quiz():
         print("Answers: ", mcqs_answers)
 
         for answers in mcqs_answers['entered']:
-            if answers!= None:
+            if answers!= '':
                 attempted_questions+=1
         for element in range(len(mcqs_answers['entered'])):
             if mcqs_answers['entered'][element] == mcqs_answers['correct_answers'][element]:
@@ -862,17 +862,14 @@ def q3_quiz():
         
         x_all=[]
         for i in data_all:
-            # print(len(i))
             x = random.sample(range(len(i)), 3)
-            # print(x)
             x_all.append(x)
         
         questions_to_send = []
         for index in range(len(data_all)):
             for i in x_all[index] : #add index to x[index]
                 print(data_all[index][i]['data'])
-                temp = {'actual_word': "", 'audio': data_all[index][i]['data'], 'option_1': "", #instead of image add data[index][i]['data']
-                        'option_2': "", 'option_3': "", 'option_4': ""}
+                temp = {'actual_word': "", 'audio': data_all[index][i]['data'], 'option_1': "",'option_2': "", 'option_3': "", 'option_4': ""}
                 options_to_be_selected = []
                 index_of_options = random.sample(range(len(data_all[index][i]['options'])), 3)
                 for index2 in index_of_options:
@@ -907,7 +904,7 @@ def q4_quiz():
         mcqs_answers = request.get_json(force=True)
         print("Answers: ", mcqs_answers)
         for answers in mcqs_answers['entered']:
-            if answers!= None:
+            if answers!= '':
                 attempted_questions+=1
         for element in range(len(mcqs_answers['entered'])):
             if mcqs_answers['entered'][element] == mcqs_answers['correct_answers'][element]:
