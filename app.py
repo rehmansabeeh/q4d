@@ -669,10 +669,11 @@ def q2_quiz():
         attempted_questions=0
         mcqs_answers = request.get_json(force=True)
         print("Answers: ", mcqs_answers)
-
-        for answers in mcqs_answers['entered']:
-            if answers!= '':
+                
+        for answers in range(len(mcqs_answers['entered'])):
+            if mcqs_answers['entered'][answers]!= '':
                 attempted_questions+=1
+                mcqs_answers['entered'][answers]=mcqs_answers['entered'][answers].strip()
         for element in range(len(mcqs_answers['entered'])):
             if mcqs_answers['entered'][element] == mcqs_answers['correct_answers'][element]:
                 score += 1
@@ -903,9 +904,10 @@ def q4_quiz():
         attempted_questions=0
         mcqs_answers = request.get_json(force=True)
         print("Answers: ", mcqs_answers)
-        for answers in mcqs_answers['entered']:
-            if answers!= '':
+        for answers in range(len(mcqs_answers['entered'])):
+            if mcqs_answers['entered'][answers]!= '':
                 attempted_questions+=1
+                mcqs_answers['entered'][answers]=mcqs_answers['entered'][answers].strip()
         for element in range(len(mcqs_answers['entered'])):
             if mcqs_answers['entered'][element] == mcqs_answers['correct_answers'][element]:
                 score += 1
@@ -915,6 +917,7 @@ def q4_quiz():
             print("MCQ ANSWER IS ",mcqs_answers['entered'][element], "    ",  data['options'])
             if mcqs_answers['entered'][element] not in data['options'] and mcqs_answers['entered'][element] !='' and mcqs_answers['entered'][element] != mcqs_answers['correct_answers'][element]:
                 data['options'].append(mcqs_answers['entered'][element])
+                data['options'] = [s.strip() for s in data['options']]
                 questions.find_and_modify({"_id": data['_id']},
                 {'question_type': data['question_type'], 'q_level': data['q_level'], 'actual_word': data['actual_word'],
                     'options': data['options'], 'data': data['data']})
@@ -1242,6 +1245,7 @@ def test_start_6():
 
 @app.route('/test_start_7', methods=['POST', 'GET'])
 def test_start_7():
+    
 
     print("method2 is : ", request.method)
 
@@ -1249,6 +1253,23 @@ def test_start_7():
         res = make_response(jsonify({'message': "successful"}))
         return res
     else:
+        questions = mongo.db.Questions
+        # data = list(questions.find({'question_type': 'audio_word'}))
+        # for i in data:
+        #     print('Options are ',i['options'])
+        #     print('Correct option is ', i['actual_word'])
+
+        #     i['options'] = [s.strip() for s in i['options']]
+        #     i['options'] = list(set(i['options']))
+        #     print("after removing duplicates ",i['options'])
+        #     if i['actual_word'] in i['options']:
+        #         i['options'].remove(i['actual_word'])
+        #         print("word removed")
+            
+        #     print('after removing correct value ',i['options'])
+        #     questions.find_and_modify({"_id": i['_id']},
+        #     {'question_type': i['question_type'], 'q_level': i['q_level'], 'actual_word': i['actual_word'],
+        #         'options': i['options'], 'data': i['data']})
         return render_template('test7_start_page.html')
 
 
