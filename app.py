@@ -911,8 +911,9 @@ def q4_quiz():
                 score += 1
         for element in range(len(mcqs_answers['entered'])):
             data = list(questions.find({'actual_word': mcqs_answers['correct_answers'][element], 'question_type': 'audio_word'}))[0]
-            print(data)
-            if mcqs_answers['entered'][element] not in data['options'] and mcqs_answers['entered'][element] !='' :
+            
+            print("MCQ ANSWER IS ",mcqs_answers['entered'][element], "    ",  data['options'])
+            if mcqs_answers['entered'][element] not in data['options'] and mcqs_answers['entered'][element] !='' and mcqs_answers['entered'][element] != mcqs_answers['correct_answers'][element]:
                 data['options'].append(mcqs_answers['entered'][element])
                 questions.find_and_modify({"_id": data['_id']},
                 {'question_type': data['question_type'], 'q_level': data['q_level'], 'actual_word': data['actual_word'],
